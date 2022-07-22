@@ -13,6 +13,7 @@ namespace LabTest {
         public Form1() {
             InitializeComponent();
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
         }
 
         private void Form1_Load(object sender, EventArgs e) {
