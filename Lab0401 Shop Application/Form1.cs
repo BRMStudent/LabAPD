@@ -12,6 +12,12 @@ namespace Lab0401_Shop_Application {
     public partial class Form1 : Form {
         public Form1() {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+        }
+
+        private void lblProductId_Click(object sender, EventArgs e) {
+
         }
     }
 }
