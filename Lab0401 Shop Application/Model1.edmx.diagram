@@ -10,7 +10,6 @@
         <EntityTypeShape EntityType="APD65_63011212041Model.OrderItem" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="APD65_63011212041Model.Product" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="APD65_63011212041Model.Supplier" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="APD65_63011212041Model.sysdiagram" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
         <AssociationConnector Association="APD65_63011212041Model.FK_ORDER_REFERENCE_CUSTOMER" ManuallyRouted="false" />
         <AssociationConnector Association="APD65_63011212041Model.FK_ORDERITE_REFERENCE_ORDER" ManuallyRouted="false" />
         <AssociationConnector Association="APD65_63011212041Model.FK_ORDERITE_REFERENCE_PRODUCT" ManuallyRouted="false" />

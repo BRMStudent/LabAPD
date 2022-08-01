@@ -23,11 +23,13 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.SaveButton = new System.Windows.Forms.Button();
-            this.DeleteButton = new System.Windows.Forms.Button();
-            this.AddButton = new System.Windows.Forms.Button();
+            this.components = new System.ComponentModel.Container();
+            this.tabControl = new System.Windows.Forms.TabControl();
+            this.tabPageCustomer = new System.Windows.Forms.TabPage();
+            this.ButtonAddNewCustomer = new System.Windows.Forms.Button();
+            this.ButtonSave = new System.Windows.Forms.Button();
+            this.ButtonDelete = new System.Windows.Forms.Button();
+            this.ButtonAddCustomer = new System.Windows.Forms.Button();
             this.lblPhone = new System.Windows.Forms.Label();
             this.lblCountry = new System.Windows.Forms.Label();
             this.lblCity = new System.Windows.Forms.Label();
@@ -41,12 +43,12 @@
             this.textBoxFirstName = new System.Windows.Forms.TextBox();
             this.textBoxCustomerID = new System.Windows.Forms.TextBox();
             this.dataGridViewCustomer = new System.Windows.Forms.DataGridView();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.tabPageProduct = new System.Windows.Forms.TabPage();
+            this.dataGridViewProduct = new System.Windows.Forms.DataGridView();
+            this.comboBoxSupplier = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.buttonAddProduct = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -58,86 +60,113 @@
             this.textBoxUnitPrice = new System.Windows.Forms.TextBox();
             this.textBoxProductName = new System.Windows.Forms.TextBox();
             this.textBoxProductID = new System.Windows.Forms.TextBox();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPageSell = new System.Windows.Forms.TabPage();
             this.lblProductId = new System.Windows.Forms.Label();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.countryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tabControl.SuspendLayout();
+            this.tabPageCustomer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustomer)).BeginInit();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.tabPage3.SuspendLayout();
+            this.tabPageProduct.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduct)).BeginInit();
+            this.tabPageSell.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // tabControl
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(862, 529);
-            this.tabControl1.TabIndex = 0;
+            this.tabControl.Controls.Add(this.tabPageCustomer);
+            this.tabControl.Controls.Add(this.tabPageProduct);
+            this.tabControl.Controls.Add(this.tabPageSell);
+            this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl.Location = new System.Drawing.Point(0, 0);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(862, 529);
+            this.tabControl.TabIndex = 0;
             // 
-            // tabPage1
+            // tabPageCustomer
             // 
-            this.tabPage1.Controls.Add(this.SaveButton);
-            this.tabPage1.Controls.Add(this.DeleteButton);
-            this.tabPage1.Controls.Add(this.AddButton);
-            this.tabPage1.Controls.Add(this.lblPhone);
-            this.tabPage1.Controls.Add(this.lblCountry);
-            this.tabPage1.Controls.Add(this.lblCity);
-            this.tabPage1.Controls.Add(this.lblLastName);
-            this.tabPage1.Controls.Add(this.lblFirstName);
-            this.tabPage1.Controls.Add(this.lblID);
-            this.tabPage1.Controls.Add(this.textBoxPhone);
-            this.tabPage1.Controls.Add(this.textBoxCountry);
-            this.tabPage1.Controls.Add(this.textBoxCity);
-            this.tabPage1.Controls.Add(this.textBoxLastName);
-            this.tabPage1.Controls.Add(this.textBoxFirstName);
-            this.tabPage1.Controls.Add(this.textBoxCustomerID);
-            this.tabPage1.Controls.Add(this.dataGridViewCustomer);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(854, 496);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Customer";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPageCustomer.BackColor = System.Drawing.Color.White;
+            this.tabPageCustomer.Controls.Add(this.ButtonAddNewCustomer);
+            this.tabPageCustomer.Controls.Add(this.ButtonSave);
+            this.tabPageCustomer.Controls.Add(this.ButtonDelete);
+            this.tabPageCustomer.Controls.Add(this.ButtonAddCustomer);
+            this.tabPageCustomer.Controls.Add(this.lblPhone);
+            this.tabPageCustomer.Controls.Add(this.lblCountry);
+            this.tabPageCustomer.Controls.Add(this.lblCity);
+            this.tabPageCustomer.Controls.Add(this.lblLastName);
+            this.tabPageCustomer.Controls.Add(this.lblFirstName);
+            this.tabPageCustomer.Controls.Add(this.lblID);
+            this.tabPageCustomer.Controls.Add(this.textBoxPhone);
+            this.tabPageCustomer.Controls.Add(this.textBoxCountry);
+            this.tabPageCustomer.Controls.Add(this.textBoxCity);
+            this.tabPageCustomer.Controls.Add(this.textBoxLastName);
+            this.tabPageCustomer.Controls.Add(this.textBoxFirstName);
+            this.tabPageCustomer.Controls.Add(this.textBoxCustomerID);
+            this.tabPageCustomer.Controls.Add(this.dataGridViewCustomer);
+            this.tabPageCustomer.Location = new System.Drawing.Point(4, 29);
+            this.tabPageCustomer.Name = "tabPageCustomer";
+            this.tabPageCustomer.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageCustomer.Size = new System.Drawing.Size(854, 496);
+            this.tabPageCustomer.TabIndex = 0;
+            this.tabPageCustomer.Text = "Customer";
             // 
-            // SaveButton
+            // ButtonAddNewCustomer
             // 
-            this.SaveButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.SaveButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SaveButton.Location = new System.Drawing.Point(597, 450);
-            this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(238, 40);
-            this.SaveButton.TabIndex = 24;
-            this.SaveButton.Text = "Save";
-            this.SaveButton.UseVisualStyleBackColor = true;
+            this.ButtonAddNewCustomer.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.ButtonAddNewCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ButtonAddNewCustomer.Location = new System.Drawing.Point(470, 448);
+            this.ButtonAddNewCustomer.Name = "ButtonAddNewCustomer";
+            this.ButtonAddNewCustomer.Size = new System.Drawing.Size(119, 40);
+            this.ButtonAddNewCustomer.TabIndex = 27;
+            this.ButtonAddNewCustomer.Text = "Add New";
+            this.ButtonAddNewCustomer.UseVisualStyleBackColor = true;
+            this.ButtonAddNewCustomer.Click += new System.EventHandler(this.buttonAddNewCustomer_Click);
             // 
-            // DeleteButton
+            // ButtonSave
             // 
-            this.DeleteButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DeleteButton.Location = new System.Drawing.Point(9, 449);
-            this.DeleteButton.Name = "DeleteButton";
-            this.DeleteButton.Size = new System.Drawing.Size(238, 40);
-            this.DeleteButton.TabIndex = 25;
-            this.DeleteButton.Text = "Delete";
-            this.DeleteButton.UseVisualStyleBackColor = true;
+            this.ButtonSave.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.ButtonSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ButtonSave.Location = new System.Drawing.Point(597, 450);
+            this.ButtonSave.Name = "ButtonSave";
+            this.ButtonSave.Size = new System.Drawing.Size(238, 40);
+            this.ButtonSave.TabIndex = 24;
+            this.ButtonSave.Text = "Save";
+            this.ButtonSave.UseVisualStyleBackColor = true;
+            this.ButtonSave.Click += new System.EventHandler(this.ButtonSave_Click);
             // 
-            // AddButton
+            // ButtonDelete
             // 
-            this.AddButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.AddButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.AddButton.Location = new System.Drawing.Point(597, 404);
-            this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(238, 40);
-            this.AddButton.TabIndex = 26;
-            this.AddButton.Text = "Add";
-            this.AddButton.UseVisualStyleBackColor = true;
+            this.ButtonDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ButtonDelete.Location = new System.Drawing.Point(9, 449);
+            this.ButtonDelete.Name = "ButtonDelete";
+            this.ButtonDelete.Size = new System.Drawing.Size(238, 40);
+            this.ButtonDelete.TabIndex = 25;
+            this.ButtonDelete.Text = "Delete";
+            this.ButtonDelete.UseVisualStyleBackColor = true;
+            this.ButtonDelete.Click += new System.EventHandler(this.ButtonDelete_Click);
+            // 
+            // ButtonAddCustomer
+            // 
+            this.ButtonAddCustomer.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.ButtonAddCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ButtonAddCustomer.Location = new System.Drawing.Point(597, 404);
+            this.ButtonAddCustomer.Name = "ButtonAddCustomer";
+            this.ButtonAddCustomer.Size = new System.Drawing.Size(238, 40);
+            this.ButtonAddCustomer.TabIndex = 26;
+            this.ButtonAddCustomer.Text = "Add";
+            this.ButtonAddCustomer.UseVisualStyleBackColor = true;
+            this.ButtonAddCustomer.Click += new System.EventHandler(this.ButtonAddCustomer_Click);
             // 
             // lblPhone
             // 
@@ -208,6 +237,7 @@
             // textBoxPhone
             // 
             this.textBoxPhone.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.textBoxPhone.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customerBindingSource, "Phone", true));
             this.textBoxPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPhone.Location = new System.Drawing.Point(597, 359);
             this.textBoxPhone.Multiline = true;
@@ -219,6 +249,7 @@
             // textBoxCountry
             // 
             this.textBoxCountry.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.textBoxCountry.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customerBindingSource, "Country", true));
             this.textBoxCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxCountry.Location = new System.Drawing.Point(597, 293);
             this.textBoxCountry.Multiline = true;
@@ -230,6 +261,7 @@
             // textBoxCity
             // 
             this.textBoxCity.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.textBoxCity.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customerBindingSource, "City", true));
             this.textBoxCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxCity.Location = new System.Drawing.Point(597, 228);
             this.textBoxCity.Multiline = true;
@@ -241,6 +273,7 @@
             // textBoxLastName
             // 
             this.textBoxLastName.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.textBoxLastName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customerBindingSource, "LastName", true));
             this.textBoxLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxLastName.Location = new System.Drawing.Point(597, 161);
             this.textBoxLastName.Multiline = true;
@@ -252,6 +285,7 @@
             // textBoxFirstName
             // 
             this.textBoxFirstName.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.textBoxFirstName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customerBindingSource, "FirstName", true));
             this.textBoxFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxFirstName.Location = new System.Drawing.Point(597, 95);
             this.textBoxFirstName.Multiline = true;
@@ -263,20 +297,37 @@
             // textBoxCustomerID
             // 
             this.textBoxCustomerID.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.textBoxCustomerID.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxCustomerID.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.textBoxCustomerID.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customerBindingSource, "Id", true));
             this.textBoxCustomerID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxCustomerID.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.textBoxCustomerID.Location = new System.Drawing.Point(597, 31);
             this.textBoxCustomerID.Multiline = true;
             this.textBoxCustomerID.Name = "textBoxCustomerID";
             this.textBoxCustomerID.ReadOnly = true;
-            this.textBoxCustomerID.Size = new System.Drawing.Size(238, 30);
+            this.textBoxCustomerID.Size = new System.Drawing.Size(119, 30);
             this.textBoxCustomerID.TabIndex = 17;
+            this.textBoxCustomerID.UseWaitCursor = true;
             this.textBoxCustomerID.WordWrap = false;
             // 
             // dataGridViewCustomer
             // 
+            this.dataGridViewCustomer.AllowUserToAddRows = false;
+            this.dataGridViewCustomer.AllowUserToDeleteRows = false;
+            this.dataGridViewCustomer.AllowUserToResizeColumns = false;
+            this.dataGridViewCustomer.AllowUserToResizeRows = false;
+            this.dataGridViewCustomer.AutoGenerateColumns = false;
             this.dataGridViewCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCustomer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.firstNameDataGridViewTextBoxColumn,
+            this.lastNameDataGridViewTextBoxColumn,
+            this.countryDataGridViewTextBoxColumn});
+            this.dataGridViewCustomer.DataSource = this.customerBindingSource;
             this.dataGridViewCustomer.Location = new System.Drawing.Point(7, 7);
             this.dataGridViewCustomer.Name = "dataGridViewCustomer";
+            this.dataGridViewCustomer.ReadOnly = true;
             this.dataGridViewCustomer.RowHeadersVisible = false;
             this.dataGridViewCustomer.RowHeadersWidth = 51;
             this.dataGridViewCustomer.RowTemplate.Height = 24;
@@ -284,52 +335,65 @@
             this.dataGridViewCustomer.Size = new System.Drawing.Size(582, 436);
             this.dataGridViewCustomer.TabIndex = 11;
             // 
-            // tabPage2
+            // tabPageProduct
             // 
-            this.tabPage2.Controls.Add(this.dataGridView1);
-            this.tabPage2.Controls.Add(this.comboBox1);
-            this.tabPage2.Controls.Add(this.button1);
-            this.tabPage2.Controls.Add(this.button2);
-            this.tabPage2.Controls.Add(this.button3);
-            this.tabPage2.Controls.Add(this.label1);
-            this.tabPage2.Controls.Add(this.label2);
-            this.tabPage2.Controls.Add(this.label3);
-            this.tabPage2.Controls.Add(this.label4);
-            this.tabPage2.Controls.Add(this.label5);
-            this.tabPage2.Controls.Add(this.label6);
-            this.tabPage2.Controls.Add(this.textBoxDiscount);
-            this.tabPage2.Controls.Add(this.textBoxPackage);
-            this.tabPage2.Controls.Add(this.textBoxUnitPrice);
-            this.tabPage2.Controls.Add(this.textBoxProductName);
-            this.tabPage2.Controls.Add(this.textBoxProductID);
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(854, 496);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Product";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPageProduct.Controls.Add(this.dataGridViewProduct);
+            this.tabPageProduct.Controls.Add(this.comboBoxSupplier);
+            this.tabPageProduct.Controls.Add(this.button1);
+            this.tabPageProduct.Controls.Add(this.button2);
+            this.tabPageProduct.Controls.Add(this.buttonAddProduct);
+            this.tabPageProduct.Controls.Add(this.label1);
+            this.tabPageProduct.Controls.Add(this.label2);
+            this.tabPageProduct.Controls.Add(this.label3);
+            this.tabPageProduct.Controls.Add(this.label4);
+            this.tabPageProduct.Controls.Add(this.label5);
+            this.tabPageProduct.Controls.Add(this.label6);
+            this.tabPageProduct.Controls.Add(this.textBoxDiscount);
+            this.tabPageProduct.Controls.Add(this.textBoxPackage);
+            this.tabPageProduct.Controls.Add(this.textBoxUnitPrice);
+            this.tabPageProduct.Controls.Add(this.textBoxProductName);
+            this.tabPageProduct.Controls.Add(this.textBoxProductID);
+            this.tabPageProduct.Location = new System.Drawing.Point(4, 29);
+            this.tabPageProduct.Name = "tabPageProduct";
+            this.tabPageProduct.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageProduct.Size = new System.Drawing.Size(854, 496);
+            this.tabPageProduct.TabIndex = 1;
+            this.tabPageProduct.Text = "Product";
+            this.tabPageProduct.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dataGridViewProduct
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 7);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(582, 436);
-            this.dataGridView1.TabIndex = 44;
+            this.dataGridViewProduct.AllowUserToAddRows = false;
+            this.dataGridViewProduct.AllowUserToDeleteRows = false;
+            this.dataGridViewProduct.AllowUserToResizeColumns = false;
+            this.dataGridViewProduct.AllowUserToResizeRows = false;
+            this.dataGridViewProduct.AutoGenerateColumns = false;
+            this.dataGridViewProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn1,
+            this.productNameDataGridViewTextBoxColumn,
+            this.unitPriceDataGridViewTextBoxColumn});
+            this.dataGridViewProduct.DataSource = this.productBindingSource;
+            this.dataGridViewProduct.Location = new System.Drawing.Point(7, 7);
+            this.dataGridViewProduct.Name = "dataGridViewProduct";
+            this.dataGridViewProduct.ReadOnly = true;
+            this.dataGridViewProduct.RowHeadersVisible = false;
+            this.dataGridViewProduct.RowHeadersWidth = 51;
+            this.dataGridViewProduct.RowTemplate.Height = 24;
+            this.dataGridViewProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewProduct.Size = new System.Drawing.Size(582, 436);
+            this.dataGridViewProduct.TabIndex = 44;
+            this.dataGridViewProduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewProduct_CellClick);
             // 
-            // comboBox1
+            // comboBoxSupplier
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(595, 358);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(238, 28);
-            this.comboBox1.TabIndex = 43;
+            this.comboBoxSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxSupplier.FormattingEnabled = true;
+            this.comboBoxSupplier.Location = new System.Drawing.Point(595, 358);
+            this.comboBoxSupplier.Name = "comboBoxSupplier";
+            this.comboBoxSupplier.Size = new System.Drawing.Size(238, 28);
+            this.comboBoxSupplier.TabIndex = 43;
+            this.comboBoxSupplier.SelectedIndexChanged += new System.EventHandler(this.comboBoxSupplier_SelectedIndexChanged);
             // 
             // button1
             // 
@@ -351,15 +415,16 @@
             this.button2.Text = "Delete";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // buttonAddProduct
             // 
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Location = new System.Drawing.Point(595, 403);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(238, 40);
-            this.button3.TabIndex = 42;
-            this.button3.Text = "Add";
-            this.button3.UseVisualStyleBackColor = true;
+            this.buttonAddProduct.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAddProduct.Location = new System.Drawing.Point(595, 403);
+            this.buttonAddProduct.Name = "buttonAddProduct";
+            this.buttonAddProduct.Size = new System.Drawing.Size(238, 40);
+            this.buttonAddProduct.TabIndex = 42;
+            this.buttonAddProduct.Text = "Add";
+            this.buttonAddProduct.UseVisualStyleBackColor = true;
+            this.buttonAddProduct.Click += new System.EventHandler(this.buttonAddProduct_Click);
             // 
             // label1
             // 
@@ -369,7 +434,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 20);
             this.label1.TabIndex = 34;
-            this.label1.Text = "Suppiler";
+            this.label1.Text = "Supplier";
             // 
             // label2
             // 
@@ -467,20 +532,21 @@
             this.textBoxProductID.Location = new System.Drawing.Point(595, 30);
             this.textBoxProductID.Multiline = true;
             this.textBoxProductID.Name = "textBoxProductID";
-            this.textBoxProductID.Size = new System.Drawing.Size(238, 30);
+            this.textBoxProductID.ReadOnly = true;
+            this.textBoxProductID.Size = new System.Drawing.Size(119, 30);
             this.textBoxProductID.TabIndex = 33;
             this.textBoxProductID.WordWrap = false;
             // 
-            // tabPage3
+            // tabPageSell
             // 
-            this.tabPage3.Controls.Add(this.lblProductId);
-            this.tabPage3.Location = new System.Drawing.Point(4, 29);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(854, 496);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Sell";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabPageSell.Controls.Add(this.lblProductId);
+            this.tabPageSell.Location = new System.Drawing.Point(4, 29);
+            this.tabPageSell.Name = "tabPageSell";
+            this.tabPageSell.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageSell.Size = new System.Drawing.Size(854, 496);
+            this.tabPageSell.TabIndex = 2;
+            this.tabPageSell.Text = "Sell";
+            this.tabPageSell.UseVisualStyleBackColor = true;
             // 
             // lblProductId
             // 
@@ -492,37 +558,113 @@
             this.lblProductId.TabIndex = 39;
             this.lblProductId.Text = "Product ID";
             // 
+            // customerBindingSource
+            // 
+            this.customerBindingSource.DataSource = typeof(Lab0401_Shop_Application.Customer);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Width = 51;
+            // 
+            // firstNameDataGridViewTextBoxColumn
+            // 
+            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            this.firstNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.firstNameDataGridViewTextBoxColumn.Width = 124;
+            // 
+            // lastNameDataGridViewTextBoxColumn
+            // 
+            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            this.lastNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.lastNameDataGridViewTextBoxColumn.Width = 124;
+            // 
+            // countryDataGridViewTextBoxColumn
+            // 
+            this.countryDataGridViewTextBoxColumn.DataPropertyName = "Country";
+            this.countryDataGridViewTextBoxColumn.HeaderText = "Country";
+            this.countryDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.countryDataGridViewTextBoxColumn.Name = "countryDataGridViewTextBoxColumn";
+            this.countryDataGridViewTextBoxColumn.ReadOnly = true;
+            this.countryDataGridViewTextBoxColumn.Width = 124;
+            // 
+            // idDataGridViewTextBoxColumn1
+            // 
+            this.idDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
+            this.idDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn1.Width = 51;
+            // 
+            // productNameDataGridViewTextBoxColumn
+            // 
+            this.productNameDataGridViewTextBoxColumn.DataPropertyName = "ProductName";
+            this.productNameDataGridViewTextBoxColumn.HeaderText = "ProductName";
+            this.productNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
+            this.productNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.productNameDataGridViewTextBoxColumn.Width = 247;
+            // 
+            // unitPriceDataGridViewTextBoxColumn
+            // 
+            this.unitPriceDataGridViewTextBoxColumn.DataPropertyName = "UnitPrice";
+            this.unitPriceDataGridViewTextBoxColumn.HeaderText = "UnitPrice";
+            this.unitPriceDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.unitPriceDataGridViewTextBoxColumn.Name = "unitPriceDataGridViewTextBoxColumn";
+            this.unitPriceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.unitPriceDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // productBindingSource
+            // 
+            this.productBindingSource.DataSource = typeof(Lab0401_Shop_Application.Product);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(862, 529);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tabControl);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lab0401 Shop Application";
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.tabControl.ResumeLayout(false);
+            this.tabPageCustomer.ResumeLayout(false);
+            this.tabPageCustomer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustomer)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
+            this.tabPageProduct.ResumeLayout(false);
+            this.tabPageProduct.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduct)).EndInit();
+            this.tabPageSell.ResumeLayout(false);
+            this.tabPageSell.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.Button SaveButton;
-        private System.Windows.Forms.Button DeleteButton;
-        private System.Windows.Forms.Button AddButton;
+        private System.Windows.Forms.TabControl tabControl;
+        private System.Windows.Forms.TabPage tabPageCustomer;
+        private System.Windows.Forms.TabPage tabPageProduct;
+        private System.Windows.Forms.TabPage tabPageSell;
+        private System.Windows.Forms.Button ButtonSave;
+        private System.Windows.Forms.Button ButtonDelete;
+        private System.Windows.Forms.Button ButtonAddCustomer;
         private System.Windows.Forms.Label lblPhone;
         private System.Windows.Forms.Label lblCountry;
         private System.Windows.Forms.Label lblCity;
@@ -538,7 +680,7 @@
         private System.Windows.Forms.DataGridView dataGridViewCustomer;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buttonAddProduct;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -550,9 +692,19 @@
         private System.Windows.Forms.TextBox textBoxUnitPrice;
         private System.Windows.Forms.TextBox textBoxProductName;
         private System.Windows.Forms.TextBox textBoxProductID;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ComboBox comboBoxSupplier;
+        private System.Windows.Forms.DataGridView dataGridViewProduct;
         private System.Windows.Forms.Label lblProductId;
+        private System.Windows.Forms.BindingSource customerBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn countryDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button ButtonAddNewCustomer;
+        private System.Windows.Forms.BindingSource productBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unitPriceDataGridViewTextBoxColumn;
     }
 }
 
