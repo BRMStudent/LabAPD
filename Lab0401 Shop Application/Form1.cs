@@ -71,7 +71,7 @@ namespace Lab0401_Shop_Application {
             var customer = context.Customers.Find(id);
             var toDelete = context.Customers.Where((c) => c.Id == id).First();
 
-            context.Customers.Remove(customer);
+            context.Customers.Remove(toDelete);
 
             int change = context.SaveChanges();
             refresh();
@@ -108,6 +108,87 @@ namespace Lab0401_Shop_Application {
             context.Products.Add(product);
             int change = context.SaveChanges();
             refresh();
+        }
+
+        private void buttonSaveProduct_Click(object sender, EventArgs e) {
+            int id = int.Parse(textBoxProductID.Text);
+            var product = context.Products.Find(id);
+            var result = context.Customers.Where((c) => c.Id == id).First();
+
+            product.ProductName = textBoxProductName.Text;
+            product.UnitPrice = decimal.Parse(textBoxUnitPrice.Text);
+            product.Package = textBoxPackage.Text;
+            product.IsDiscontinued = bool.Parse(textBoxDiscount.Text);
+            product.SupplierId= int.Parse(((ComboBoxItem)comboBoxSupplier.SelectedItem).Value);
+
+            int change = context.SaveChanges();
+            if (change > 0) {
+                MessageBox.Show("Update OK");
+                refresh();
+            }
+        }
+
+        private void buttonDeleteProduct_Click(object sender, EventArgs e) {
+            int id = int.Parse(textBoxProductID.Text);
+            var product = context.Products.Find(id);
+            var result = context.Products.Where((c) => c.Id == id).First();
+
+            context.Products.Remove(product);
+            int change = context.SaveChanges();
+            MessageBox.Show("Change " + change + " records");
+            refresh();
+        }
+
+        private void textBoxProductIdToSell_KeyPress(object sender, KeyPressEventArgs e) {
+            if (e.KeyChar == (char)Keys.Enter) {
+                numericUpDown1.Focus();
+            }
+        }
+
+        private void numericUpDown1_KeyPress(object sender, KeyPressEventArgs e) {
+            if (e.KeyChar == (char)Keys.Enter) {
+                int id = int.Parse(textBoxProductIdToSell.Text);
+                var product = context.Products.Find(id);
+                var result = context.Products.Where((c) => c.Id == id).First();
+                string[] item = new string[] {
+                    product.Id.ToString(),
+                    product.ProductName,
+                    numericUpDown1.Value.ToString(),
+                    product.UnitPrice.ToString(),
+                    (product.UnitPrice * numericUpDown1.Value).ToString()
+                };
+                listView1.Items.Add(new ListViewItem(item));
+
+                double sum = calculateTotal(listView1.Items);
+                labelTotalPrice.Text = sum.ToString();
+            }
+        }
+
+        private double calculateTotal(ListView.ListViewItemCollection items) {
+            double sum = 0;
+            foreach (ListViewItem item in items) {
+                sum += double.Parse(item.SubItems[4].Text);
+            }
+            return sum;
+        }
+
+        private void buttonSaveSell_Click(object sender, EventArgs e) {
+            Order order = new Order();
+            order.OrderDate = DateTime.Now;
+            order.OrderNumber = "123456";
+            order.CustomerId = 2;
+            order.TotalAmount = decimal.Parse(labelTotalPrice.Text);
+
+            context.Orders.Add(order);
+            int change = context.SaveChanges();
+            MessageBox.Show("Change " + change + " records");
+
+            if (change == 1) {
+                foreach (ListViewItem item in listView1.Items) { 
+                    OrderItem orderItem = new OrderItem();
+
+                }
+            }
         }
     }
 

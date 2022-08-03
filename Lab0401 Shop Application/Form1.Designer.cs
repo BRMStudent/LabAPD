@@ -46,8 +46,8 @@
             this.tabPageProduct = new System.Windows.Forms.TabPage();
             this.dataGridViewProduct = new System.Windows.Forms.DataGridView();
             this.comboBoxSupplier = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonSaveProduct = new System.Windows.Forms.Button();
+            this.buttonDeleteProduct = new System.Windows.Forms.Button();
             this.buttonAddProduct = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -61,6 +61,17 @@
             this.textBoxProductName = new System.Windows.Forms.TextBox();
             this.textBoxProductID = new System.Windows.Forms.TextBox();
             this.tabPageSell = new System.Windows.Forms.TabPage();
+            this.buttonSaveSell = new System.Windows.Forms.Button();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.textBoxProductIdToSell = new System.Windows.Forms.TextBox();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.labelTotalPrice = new System.Windows.Forms.Label();
+            this.labelTotal = new System.Windows.Forms.Label();
             this.lblProductId = new System.Windows.Forms.Label();
             this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,6 +88,7 @@
             this.tabPageProduct.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduct)).BeginInit();
             this.tabPageSell.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -337,10 +349,11 @@
             // 
             // tabPageProduct
             // 
+            this.tabPageProduct.BackColor = System.Drawing.Color.White;
             this.tabPageProduct.Controls.Add(this.dataGridViewProduct);
             this.tabPageProduct.Controls.Add(this.comboBoxSupplier);
-            this.tabPageProduct.Controls.Add(this.button1);
-            this.tabPageProduct.Controls.Add(this.button2);
+            this.tabPageProduct.Controls.Add(this.buttonSaveProduct);
+            this.tabPageProduct.Controls.Add(this.buttonDeleteProduct);
             this.tabPageProduct.Controls.Add(this.buttonAddProduct);
             this.tabPageProduct.Controls.Add(this.label1);
             this.tabPageProduct.Controls.Add(this.label2);
@@ -359,7 +372,6 @@
             this.tabPageProduct.Size = new System.Drawing.Size(854, 496);
             this.tabPageProduct.TabIndex = 1;
             this.tabPageProduct.Text = "Product";
-            this.tabPageProduct.UseVisualStyleBackColor = true;
             // 
             // dataGridViewProduct
             // 
@@ -395,25 +407,27 @@
             this.comboBoxSupplier.TabIndex = 43;
             this.comboBoxSupplier.SelectedIndexChanged += new System.EventHandler(this.comboBoxSupplier_SelectedIndexChanged);
             // 
-            // button1
+            // buttonSaveProduct
             // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Location = new System.Drawing.Point(595, 449);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(238, 40);
-            this.button1.TabIndex = 40;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonSaveProduct.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSaveProduct.Location = new System.Drawing.Point(595, 449);
+            this.buttonSaveProduct.Name = "buttonSaveProduct";
+            this.buttonSaveProduct.Size = new System.Drawing.Size(238, 40);
+            this.buttonSaveProduct.TabIndex = 40;
+            this.buttonSaveProduct.Text = "Save";
+            this.buttonSaveProduct.UseVisualStyleBackColor = true;
+            this.buttonSaveProduct.Click += new System.EventHandler(this.buttonSaveProduct_Click);
             // 
-            // button2
+            // buttonDeleteProduct
             // 
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Location = new System.Drawing.Point(9, 449);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(238, 40);
-            this.button2.TabIndex = 41;
-            this.button2.Text = "Delete";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonDeleteProduct.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonDeleteProduct.Location = new System.Drawing.Point(9, 449);
+            this.buttonDeleteProduct.Name = "buttonDeleteProduct";
+            this.buttonDeleteProduct.Size = new System.Drawing.Size(238, 40);
+            this.buttonDeleteProduct.TabIndex = 41;
+            this.buttonDeleteProduct.Text = "Delete";
+            this.buttonDeleteProduct.UseVisualStyleBackColor = true;
+            this.buttonDeleteProduct.Click += new System.EventHandler(this.buttonDeleteProduct_Click);
             // 
             // buttonAddProduct
             // 
@@ -539,6 +553,13 @@
             // 
             // tabPageSell
             // 
+            this.tabPageSell.BackColor = System.Drawing.Color.White;
+            this.tabPageSell.Controls.Add(this.buttonSaveSell);
+            this.tabPageSell.Controls.Add(this.numericUpDown1);
+            this.tabPageSell.Controls.Add(this.textBoxProductIdToSell);
+            this.tabPageSell.Controls.Add(this.listView1);
+            this.tabPageSell.Controls.Add(this.labelTotalPrice);
+            this.tabPageSell.Controls.Add(this.labelTotal);
             this.tabPageSell.Controls.Add(this.lblProductId);
             this.tabPageSell.Location = new System.Drawing.Point(4, 29);
             this.tabPageSell.Name = "tabPageSell";
@@ -546,7 +567,100 @@
             this.tabPageSell.Size = new System.Drawing.Size(854, 496);
             this.tabPageSell.TabIndex = 2;
             this.tabPageSell.Text = "Sell";
-            this.tabPageSell.UseVisualStyleBackColor = true;
+            // 
+            // buttonSaveSell
+            // 
+            this.buttonSaveSell.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSaveSell.Location = new System.Drawing.Point(718, 396);
+            this.buttonSaveSell.Name = "buttonSaveSell";
+            this.buttonSaveSell.Size = new System.Drawing.Size(119, 40);
+            this.buttonSaveSell.TabIndex = 43;
+            this.buttonSaveSell.Text = "Save";
+            this.buttonSaveSell.UseVisualStyleBackColor = true;
+            this.buttonSaveSell.Click += new System.EventHandler(this.buttonSaveSell_Click);
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(258, 18);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(120, 27);
+            this.numericUpDown1.TabIndex = 42;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numericUpDown1_KeyPress);
+            // 
+            // textBoxProductIdToSell
+            // 
+            this.textBoxProductIdToSell.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxProductIdToSell.Location = new System.Drawing.Point(122, 19);
+            this.textBoxProductIdToSell.Name = "textBoxProductIdToSell";
+            this.textBoxProductIdToSell.Size = new System.Drawing.Size(119, 26);
+            this.textBoxProductIdToSell.TabIndex = 41;
+            this.textBoxProductIdToSell.WordWrap = false;
+            this.textBoxProductIdToSell.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxProductIdToSell_KeyPress);
+            // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5});
+            this.listView1.GridLines = true;
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(6, 62);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(840, 328);
+            this.listView1.TabIndex = 40;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "ID";
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Product Name";
+            this.columnHeader2.Width = 150;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Amount";
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Unit Price";
+            this.columnHeader4.Width = 100;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Total";
+            this.columnHeader5.Width = 100;
+            // 
+            // labelTotalPrice
+            // 
+            this.labelTotalPrice.AutoSize = true;
+            this.labelTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalPrice.Location = new System.Drawing.Point(601, 406);
+            this.labelTotalPrice.Name = "labelTotalPrice";
+            this.labelTotalPrice.Size = new System.Drawing.Size(90, 20);
+            this.labelTotalPrice.TabIndex = 39;
+            this.labelTotalPrice.Text = "Total Price";
+            // 
+            // labelTotal
+            // 
+            this.labelTotal.AutoSize = true;
+            this.labelTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotal.Location = new System.Drawing.Point(549, 406);
+            this.labelTotal.Name = "labelTotal";
+            this.labelTotal.Size = new System.Drawing.Size(46, 20);
+            this.labelTotal.TabIndex = 39;
+            this.labelTotal.Text = "Total";
             // 
             // lblProductId
             // 
@@ -650,6 +764,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduct)).EndInit();
             this.tabPageSell.ResumeLayout(false);
             this.tabPageSell.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -678,8 +793,8 @@
         private System.Windows.Forms.TextBox textBoxFirstName;
         private System.Windows.Forms.TextBox textBoxCustomerID;
         private System.Windows.Forms.DataGridView dataGridViewCustomer;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonSaveProduct;
+        private System.Windows.Forms.Button buttonDeleteProduct;
         private System.Windows.Forms.Button buttonAddProduct;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -705,6 +820,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn productNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn unitPriceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.TextBox textBoxProductIdToSell;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Button buttonSaveSell;
+        private System.Windows.Forms.Label labelTotalPrice;
+        private System.Windows.Forms.Label labelTotal;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
     }
 }
 
