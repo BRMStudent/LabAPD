@@ -58,6 +58,7 @@ namespace Lab0303_Registration {
         private void EnrollButton_Click(object sender, EventArgs e) {
             string student_id = comboBox1.Text;
             string subject_id = dataGridViewSubject.SelectedRows[0].Cells[0].Value.ToString();
+            /*string subject_id = dataGridViewSubject.SelectedRows[0].DataBoundItem.ToString();*/
 
             Register register = new Register();
             register.student_id = student_id;

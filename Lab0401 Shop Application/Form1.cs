@@ -186,8 +186,15 @@ namespace Lab0401_Shop_Application {
             if (change == 1) {
                 foreach (ListViewItem item in listView1.Items) { 
                     OrderItem orderItem = new OrderItem();
+                    orderItem.OrderId = order.Id;
+                    orderItem.ProductId = int.Parse(item.SubItems[0].Text);
+                    orderItem.UnitPrice = decimal.Parse(item.SubItems[3].Text);
+                    orderItem.Quantity = int.Parse(item.SubItems[2].Text);
 
+                    context.OrderItems.Add(orderItem);
+                    context.SaveChanges();
                 }
+                MessageBox.Show("Save completed");
             }
         }
     }
