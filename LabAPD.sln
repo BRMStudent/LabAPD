@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab0601 Simple DLL", "LAB06
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab0601_1", "Lab0601_1\Lab0601_1.csproj", "{C4F6E479-586D-47FE-B3E0-7AD679F58AAF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab0701 Read XML", "Lab0701 Read XML\Lab0701 Read XML.csproj", "{0A110155-44FF-4A9A-BDDD-20A0F9DAAEDB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +101,10 @@ Global
 		{C4F6E479-586D-47FE-B3E0-7AD679F58AAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4F6E479-586D-47FE-B3E0-7AD679F58AAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4F6E479-586D-47FE-B3E0-7AD679F58AAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A110155-44FF-4A9A-BDDD-20A0F9DAAEDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A110155-44FF-4A9A-BDDD-20A0F9DAAEDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A110155-44FF-4A9A-BDDD-20A0F9DAAEDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A110155-44FF-4A9A-BDDD-20A0F9DAAEDB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
