@@ -36,7 +36,7 @@ namespace ComputerDIY {
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.buttonAddData = new System.Windows.Forms.Button();
+            this.buttonInsertData = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBoxType = new System.Windows.Forms.ComboBox();
             this.listView1 = new System.Windows.Forms.ListView();
@@ -77,7 +77,7 @@ namespace ComputerDIY {
             this.tabPageWebEx.Controls.Add(this.label6);
             this.tabPageWebEx.Controls.Add(this.label5);
             this.tabPageWebEx.Controls.Add(this.label4);
-            this.tabPageWebEx.Controls.Add(this.buttonAddData);
+            this.tabPageWebEx.Controls.Add(this.buttonInsertData);
             this.tabPageWebEx.Controls.Add(this.label3);
             this.tabPageWebEx.Controls.Add(this.comboBoxType);
             this.tabPageWebEx.Controls.Add(this.listView1);
@@ -97,11 +97,12 @@ namespace ComputerDIY {
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Location = new System.Drawing.Point(939, 426);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(290, 300);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
             // 
@@ -109,6 +110,7 @@ namespace ComputerDIY {
             // 
             this.textBoxPrice.Location = new System.Drawing.Point(939, 383);
             this.textBoxPrice.Name = "textBoxPrice";
+            this.textBoxPrice.ReadOnly = true;
             this.textBoxPrice.Size = new System.Drawing.Size(290, 33);
             this.textBoxPrice.TabIndex = 14;
             // 
@@ -118,6 +120,7 @@ namespace ComputerDIY {
             this.textBoxProductDetail.Location = new System.Drawing.Point(939, 264);
             this.textBoxProductDetail.Multiline = true;
             this.textBoxProductDetail.Name = "textBoxProductDetail";
+            this.textBoxProductDetail.ReadOnly = true;
             this.textBoxProductDetail.Size = new System.Drawing.Size(290, 83);
             this.textBoxProductDetail.TabIndex = 13;
             // 
@@ -126,6 +129,7 @@ namespace ComputerDIY {
             this.textBoxProductName.Font = new System.Drawing.Font("Kanit", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxProductName.Location = new System.Drawing.Point(939, 194);
             this.textBoxProductName.Name = "textBoxProductName";
+            this.textBoxProductName.ReadOnly = true;
             this.textBoxProductName.Size = new System.Drawing.Size(290, 30);
             this.textBoxProductName.TabIndex = 12;
             // 
@@ -133,6 +137,7 @@ namespace ComputerDIY {
             // 
             this.textBoxProductId.Location = new System.Drawing.Point(939, 120);
             this.textBoxProductId.Name = "textBoxProductId";
+            this.textBoxProductId.ReadOnly = true;
             this.textBoxProductId.Size = new System.Drawing.Size(290, 33);
             this.textBoxProductId.TabIndex = 11;
             // 
@@ -172,20 +177,20 @@ namespace ComputerDIY {
             this.label4.TabIndex = 10;
             this.label4.Text = "รหัสสินค้า";
             // 
-            // buttonAddData
+            // buttonInsertData
             // 
-            this.buttonAddData.Location = new System.Drawing.Point(27, 654);
-            this.buttonAddData.Name = "buttonAddData";
-            this.buttonAddData.Size = new System.Drawing.Size(884, 72);
-            this.buttonAddData.TabIndex = 9;
-            this.buttonAddData.Text = "เพิ่มข้อมูลเข้าฐานข้อมูล";
-            this.buttonAddData.UseVisualStyleBackColor = true;
-            this.buttonAddData.Click += new System.EventHandler(this.buttonAddData_Click);
+            this.buttonInsertData.Location = new System.Drawing.Point(27, 654);
+            this.buttonInsertData.Name = "buttonInsertData";
+            this.buttonInsertData.Size = new System.Drawing.Size(884, 72);
+            this.buttonInsertData.TabIndex = 9;
+            this.buttonInsertData.Text = "เพิ่มข้อมูลเข้าฐานข้อมูล";
+            this.buttonInsertData.UseVisualStyleBackColor = true;
+            this.buttonInsertData.Click += new System.EventHandler(this.buttonInsertData_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(648, 74);
+            this.label3.Location = new System.Drawing.Point(595, 74);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 27);
             this.label3.TabIndex = 8;
@@ -195,9 +200,9 @@ namespace ComputerDIY {
             // 
             this.comboBoxType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxType.FormattingEnabled = true;
-            this.comboBoxType.Location = new System.Drawing.Point(718, 71);
+            this.comboBoxType.Location = new System.Drawing.Point(665, 71);
             this.comboBoxType.Name = "comboBoxType";
-            this.comboBoxType.Size = new System.Drawing.Size(193, 35);
+            this.comboBoxType.Size = new System.Drawing.Size(246, 35);
             this.comboBoxType.TabIndex = 7;
             this.comboBoxType.SelectedIndexChanged += new System.EventHandler(this.comboBoxType_SelectedIndexChanged);
             // 
@@ -229,7 +234,7 @@ namespace ComputerDIY {
             // 
             // buttonGetAllPage
             // 
-            this.buttonGetAllPage.Location = new System.Drawing.Point(269, 71);
+            this.buttonGetAllPage.Location = new System.Drawing.Point(271, 71);
             this.buttonGetAllPage.Name = "buttonGetAllPage";
             this.buttonGetAllPage.Size = new System.Drawing.Size(152, 39);
             this.buttonGetAllPage.TabIndex = 5;
@@ -239,10 +244,12 @@ namespace ComputerDIY {
             // 
             // textBoxCountPage
             // 
-            this.textBoxCountPage.Location = new System.Drawing.Point(161, 73);
+            this.textBoxCountPage.Location = new System.Drawing.Point(163, 73);
             this.textBoxCountPage.Name = "textBoxCountPage";
+            this.textBoxCountPage.ReadOnly = true;
             this.textBoxCountPage.Size = new System.Drawing.Size(100, 33);
             this.textBoxCountPage.TabIndex = 4;
+            this.textBoxCountPage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
             // 
@@ -269,6 +276,7 @@ namespace ComputerDIY {
             this.textBoxURL.Name = "textBoxURL";
             this.textBoxURL.Size = new System.Drawing.Size(1046, 33);
             this.textBoxURL.TabIndex = 1;
+            this.textBoxURL.TextChanged += new System.EventHandler(this.textBoxURL_TextChanged);
             this.textBoxURL.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxURL_KeyPress);
             // 
             // label1
@@ -321,7 +329,7 @@ namespace ComputerDIY {
         private System.Windows.Forms.Button buttonGetAllPage;
         private System.Windows.Forms.TextBox textBoxCountPage;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button buttonAddData;
+        private System.Windows.Forms.Button buttonInsertData;
         private System.Windows.Forms.TextBox textBoxProductId;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBoxProductDetail;
