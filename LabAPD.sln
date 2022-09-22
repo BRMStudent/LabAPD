@@ -35,6 +35,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab0601_1", "Lab0601_1\Lab0
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab0701 Read XML", "Lab0701 Read XML\Lab0701 Read XML.csproj", "{0A110155-44FF-4A9A-BDDD-20A0F9DAAEDB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab0702 HTML Data", "Lab0702 HTML Data\Lab0702 HTML Data.csproj", "{74329107-51AC-4C73-AFE4-F5A3945FDA26}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComputerDIY", "ComputerDIY\ComputerDIY.csproj", "{F5850055-B816-44A7-A62E-5924D3DEFC9D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -105,6 +109,14 @@ Global
 		{0A110155-44FF-4A9A-BDDD-20A0F9DAAEDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A110155-44FF-4A9A-BDDD-20A0F9DAAEDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A110155-44FF-4A9A-BDDD-20A0F9DAAEDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74329107-51AC-4C73-AFE4-F5A3945FDA26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74329107-51AC-4C73-AFE4-F5A3945FDA26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74329107-51AC-4C73-AFE4-F5A3945FDA26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74329107-51AC-4C73-AFE4-F5A3945FDA26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5850055-B816-44A7-A62E-5924D3DEFC9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5850055-B816-44A7-A62E-5924D3DEFC9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5850055-B816-44A7-A62E-5924D3DEFC9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5850055-B816-44A7-A62E-5924D3DEFC9D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
