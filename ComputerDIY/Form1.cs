@@ -18,7 +18,6 @@ namespace ComputerDIY {
         List<string> priceTotal = new List<string>();
         List<string> descriptions = new List<string>();
         List<string> images = new List<string>();
-        string typeid = "";
         List<string> typeNames = new List<string> {
             "ซีพียู คอมพิวเตอร์",
             "เมนบอร์ด",
@@ -37,36 +36,36 @@ namespace ComputerDIY {
         };
 
         string name;
-        int price;
+        string price;
         string description;
         string image;
-
+        string typeid = "";
 
         public Form1() {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
 
-            textBoxURL.Text = "https://www.jib.co.th/web/product/product_list/2/"+typeid;
+            textBoxURL.Text = "https://www.jib.co.th/web/product/product_list/2/" + typeid;
             
             ComboboxAddItem(typeIds, typeNames);
             comboBoxType.SelectedIndex = 0;
 
-            AddData(textBoxURL.Text);
+            ReadData(textBoxURL.Text);
         }
 
         private void buttonGo_Click(object sender, EventArgs e) {
             textBoxCountPage.Clear();
             ClearData();
             string url = textBoxURL.Text;
-            AddData(url);
+            ReadData(url);
         }
 
         private void textBoxURL_KeyPress(object sender, KeyPressEventArgs e) {
             if (e.KeyChar == (char)Keys.Enter) {
                 ClearData();
                 string url = textBoxURL.Text;
-                AddData(url);
+                ReadData(url);
                 this.ActiveControl = null;
             }
         }
@@ -74,12 +73,16 @@ namespace ComputerDIY {
         private void listView1_Click(object sender, EventArgs e) {
             string id = listView1.SelectedItems[0].SubItems[0].Text;
             name = listView1.SelectedItems[0].SubItems[1].Text;
-            price = int.Parse(listView1.SelectedItems[0].SubItems[2].Text);
+            price = listView1.SelectedItems[0].SubItems[2].Text;
             description = listView1.SelectedItems[0].SubItems[3].Text;
             image = listView1.SelectedItems[0].SubItems[4].Text;
-
             typeid = ((ComboboxItem)(comboBoxType.SelectedItem)).Value;
-            ShowDetail(id);
+
+            textBoxProductId.Text = id;
+            textBoxProductName.Text = name;
+            textBoxProductDetail.Text = description;
+            pictureBox1.Image = LoadImage(image);
+            textBoxPrice.Text = price.ToString();
         }
 
         private void buttonGetAllPage_Click(object sender, EventArgs e) {
@@ -98,14 +101,15 @@ namespace ComputerDIY {
             textBoxCountPage.Text = countPage;
 
             for (int i = 0; i < int.Parse(countPage); i++) {
-                AddData(url + "/" + i + "00");
+                ReadData(url + "/" + i * 100);
             }
         }
 
         private void comboBoxType_SelectedIndexChanged(object sender, EventArgs e) {
             typeid = ((ComboboxItem)(comboBoxType.SelectedItem)).Value;
             textBoxURL.Text = "https://www.jib.co.th/web/product/product_list/2/" + typeid;
-            Console.WriteLine(typeid);
+            ClearData();
+            ReadData(textBoxURL.Text);
         }
 
         private void buttonInsertData_Click(object sender, EventArgs e) {
@@ -117,7 +121,7 @@ namespace ComputerDIY {
             ProductXML product = new ProductXML {
                 Id = itemId + 1,
                 Name = name,
-                Price = price,
+                Price = int.Parse(price),
                 Description = description,
                 Image = image,
                 TypeId = int.Parse(typeid)
@@ -139,7 +143,7 @@ namespace ComputerDIY {
             }
         }
 
-        private void AddData(string url) {
+        private void ReadData(string url) {
             HtmlWeb web = new HtmlWeb();
             HtmlAgilityPack.HtmlDocument doc = web.Load(url);
 
@@ -184,27 +188,6 @@ namespace ComputerDIY {
             } catch (Exception e) {
                 Console.WriteLine(e.StackTrace);
             }
-        }
-
-        private void ShowDetail(string id) {
-            string url = "https://www.jib.co.th/web/product/readProduct/" + id;
-            HtmlWeb web = new HtmlWeb();
-            HtmlAgilityPack.HtmlDocument doc = web.Load(url);
-
-            HtmlNode titleNode = doc.DocumentNode.SelectSingleNode("//meta[@property=\"og:title\"]");
-            HtmlNode descriptionNode = doc.DocumentNode.SelectSingleNode("//meta[@property=\"og:description\"]");
-            HtmlNode imageNode = doc.DocumentNode.SelectSingleNode("//meta[@property=\"og:image\"]");
-            HtmlNode priceNode = doc.DocumentNode.SelectSingleNode("//div[@class=" +
-               "\"col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center price_block\"]");
-
-            string price = priceNode.InnerText;
-            price = new string(price.Where(c => char.IsDigit(c)).ToArray());
-
-            textBoxProductId.Text = id;
-            textBoxProductName.Text = titleNode.Attributes["content"].Value;
-            textBoxProductDetail.Text = descriptionNode.Attributes["content"].Value;
-            pictureBox1.Image = LoadImage(imageNode.GetAttributeValue("content", ""));
-            textBoxPrice.Text = price;
         }
 
         private void ComboboxAddItem(List<string> typeIds, List<string> typeNames) {
