@@ -179,6 +179,7 @@ namespace ComputerDIY {
             // 
             // buttonInsertData
             // 
+            this.buttonInsertData.Enabled = false;
             this.buttonInsertData.Location = new System.Drawing.Point(27, 654);
             this.buttonInsertData.Name = "buttonInsertData";
             this.buttonInsertData.Size = new System.Drawing.Size(884, 72);
@@ -334,7 +335,6 @@ namespace ComputerDIY {
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBoxProductDetail;
         private TextBox textBoxProductName;
-        private System.Windows.Forms.TextBox textBoxProsductName;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBoxPrice;

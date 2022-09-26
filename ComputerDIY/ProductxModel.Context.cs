@@ -13,10 +13,10 @@ namespace ComputerDIY
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ProductEntities : DbContext
+    public partial class ProductxEntitie : DbContext
     {
-        public ProductEntities()
-            : base("name=ProductEntities")
+        public ProductxEntitie()
+            : base("name=ProductxEntitie")
         {
         }
     
@@ -25,7 +25,11 @@ namespace ComputerDIY
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<ProductXML> ProductXMLs { get; set; }
-        public virtual DbSet<TypeXML> TypeXMLs { get; set; }
+        public virtual DbSet<Billx> Billxes { get; set; }
+        public virtual DbSet<Customerx> Customerxes { get; set; }
+        public virtual DbSet<Employeex> Employeexes { get; set; }
+        public virtual DbSet<Itemx> Itemxes { get; set; }
+        public virtual DbSet<Productx> Productxes { get; set; }
+        public virtual DbSet<TypeProductx> TypeProductxes { get; set; }
     }
 }

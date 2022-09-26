@@ -12,18 +12,18 @@ namespace ComputerDIY
     using System;
     using System.Collections.Generic;
     
-    public partial class TypeXML
+    public partial class TypeProductx
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TypeXML()
+        public TypeProductx()
         {
-            this.ProductXMLs = new HashSet<ProductXML>();
+            this.Productxes = new HashSet<Productx>();
         }
     
         public int Id { get; set; }
-        public string Name { get; set; }
+        public string TypeName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProductXML> ProductXMLs { get; set; }
+        public virtual ICollection<Productx> Productxes { get; set; }
     }
 }

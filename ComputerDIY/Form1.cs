@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Validation;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -19,6 +20,7 @@ namespace ComputerDIY {
         List<string> descriptions = new List<string>();
         List<string> images = new List<string>();
         List<string> typeNames = new List<string> {
+            "ทั้งหมด",
             "ซีพียู คอมพิวเตอร์",
             "เมนบอร์ด",
             "การ์ดแสดงผล",
@@ -32,13 +34,8 @@ namespace ComputerDIY {
             "Bundle Pack",
         };
         List<string> typeIds = new List<string> {
-            "43", "46", "51", "53", "54", "55", "56", "57", "1433", "1617", "1616"
+            "0","43", "46", "51", "53", "54", "55", "56", "57", "1433", "1617", "1616"
         };
-
-        string name;
-        string price;
-        string description;
-        string image;
         string typeid = "";
 
         public Form1() {
@@ -51,43 +48,41 @@ namespace ComputerDIY {
             ComboboxAddItem(typeIds, typeNames);
             comboBoxType.SelectedIndex = 0;
 
-            ReadData(textBoxURL.Text);
+            //ReadData(textBoxURL.Text);
         }
 
         private void buttonGo_Click(object sender, EventArgs e) {
             textBoxCountPage.Clear();
             ClearData();
+            ResetDetail();
             string url = textBoxURL.Text;
             ReadData(url);
+            AddData();
+            buttonInsertData.Enabled = false;
         }
 
         private void textBoxURL_KeyPress(object sender, KeyPressEventArgs e) {
             if (e.KeyChar == (char)Keys.Enter) {
                 ClearData();
+                ResetDetail();
                 string url = textBoxURL.Text;
                 ReadData(url);
+                AddData();
                 this.ActiveControl = null;
             }
         }
 
         private void listView1_Click(object sender, EventArgs e) {
-            string id = listView1.SelectedItems[0].SubItems[0].Text;
-            name = listView1.SelectedItems[0].SubItems[1].Text;
-            price = listView1.SelectedItems[0].SubItems[2].Text;
-            description = listView1.SelectedItems[0].SubItems[3].Text;
-            image = listView1.SelectedItems[0].SubItems[4].Text;
-            typeid = ((ComboboxItem)(comboBoxType.SelectedItem)).Value;
-
-            textBoxProductId.Text = id;
-            textBoxProductName.Text = name;
-            textBoxProductDetail.Text = description;
-            pictureBox1.Image = LoadImage(image);
-            textBoxPrice.Text = price.ToString();
+            textBoxProductId.Text = listView1.SelectedItems[0].SubItems[0].Text;
+            textBoxProductName.Text = listView1.SelectedItems[0].SubItems[1].Text;
+            textBoxPrice.Text = listView1.SelectedItems[0].SubItems[2].Text;
+            textBoxProductDetail.Text = listView1.SelectedItems[0].SubItems[3].Text;
+            pictureBox1.Image = LoadImage(listView1.SelectedItems[0].SubItems[4].Text);
         }
 
         private void buttonGetAllPage_Click(object sender, EventArgs e) {
             ClearData();
-            
+            ResetDetail();
             string url = textBoxURL.Text;
             HtmlWeb web = new HtmlWeb();
             HtmlAgilityPack.HtmlDocument doc = web.Load(url);
@@ -103,43 +98,10 @@ namespace ComputerDIY {
             for (int i = 0; i < int.Parse(countPage); i++) {
                 ReadData(url + "/" + i * 100);
             }
-        }
-
-        private void comboBoxType_SelectedIndexChanged(object sender, EventArgs e) {
-            typeid = ((ComboboxItem)(comboBoxType.SelectedItem)).Value;
-            textBoxURL.Text = "https://www.jib.co.th/web/product/product_list/2/" + typeid;
-            ClearData();
-            ReadData(textBoxURL.Text);
-        }
-
-        private void buttonInsertData_Click(object sender, EventArgs e) {
-
-            ProductEntities context = new ProductEntities();
-            int itemId;
-            if (context.ProductXMLs.Max(b => (int?)b.Id) == null) itemId = 0;
-            else itemId = context.ProductXMLs.Max(b => b.Id);
-            ProductXML product = new ProductXML {
-                Id = itemId + 1,
-                Name = name,
-                Price = int.Parse(price),
-                Description = description,
-                Image = image,
-                TypeId = int.Parse(typeid)
-            };
-
-            context.ProductXMLs.Add(product);
-            int change = context.SaveChanges();
-            MessageBox.Show("Change " + change + " records");
-        }
-
-        private void textBoxURL_TextChanged(object sender, EventArgs e) {
-            string str = textBoxURL.Text;
-            string[] bits = str.Split('/');
-            string subStr = bits[bits.Length - 1];
-
-            if (typeIds.Contains(subStr)) {
-                int index = typeIds.IndexOf(subStr);
-                comboBoxType.SelectedIndex = index;
+            AddData();
+            string tid = ((ComboboxItem)(comboBoxType.SelectedItem)).Value;
+            if (!tid.Equals("0")) {
+                buttonInsertData.Enabled = true;
             }
         }
 
@@ -170,30 +132,104 @@ namespace ComputerDIY {
                 foreach (var image in doc.DocumentNode.SelectNodes("//img[@class=" + "\"img-responsive imgpspecial\"]")) {
                     images.Add("https://www.jib.co.th" + image.GetAttributeValue("src", ""));
                 }
+            } catch (NullReferenceException e) {
+                MessageBox.Show("สินค้าหมด");
+                Console.WriteLine(e.Message);
+            }
+        }
 
-                for (int i = 0; i < promoNames.Count(); i++) {
-                    id[i] = new string(id[i].Where(c => char.IsDigit(c)).ToArray());
-                    priceTotal[i] = new string(priceTotal[i].Where(c => char.IsDigit(c)).ToArray());
+        private void AddData() {
+            for (int i = 0; i < promoNames.Count(); i++) {
+                id[i] = new string(id[i].Where(c => char.IsDigit(c)).ToArray());
+                priceTotal[i] = new string(priceTotal[i].Where(c => char.IsDigit(c)).ToArray());
 
-                    string[] items = new string[] {
-                        id[i],
-                        promoNames[i],
-                        priceTotal[i],
-                        descriptions[i],
-                        images[i]
+                string[] items = new string[] {
+                    id[i],
+                    promoNames[i],
+                    priceTotal[i],
+                    descriptions[i],
+                    images[i]
+                };
+                listView1.Items.Add(new ListViewItem(items));
+            }
+        }
+
+        private void buttonInsertData_Click(object sender, EventArgs e) {
+            buttonInsertData.Enabled = false;
+            ResetDetail();
+            ProductxEntitie context = new ProductxEntitie();
+
+            int productId;
+            string productName;
+            int productPrice;
+            string productDescription;
+            string productImage;
+            int pTypeId;
+            int records = 0;
+
+            List<int> productList = context.Productxes.Select(x => x.ProductId).ToList();
+
+            foreach (ListViewItem item in listView1.Items) {
+
+                productId = int.Parse(item.SubItems[0].Text);
+                productName = item.SubItems[1].Text;
+                productPrice = int.Parse(item.SubItems[2].Text);
+                productDescription = item.SubItems[3].Text;
+                productImage = item.SubItems[4].Text;
+                pTypeId = int.Parse(((ComboboxItem)(comboBoxType.SelectedItem)).Value);
+
+                if (!productList.Contains(productId)) {
+                    records++;
+                    Productx product = new Productx {
+                        ProductId = productId,
+                        Name = productName,
+                        UnitPrice = productPrice,
+                        Description = productDescription,
+                        Image = productImage,
+                        TypeId = pTypeId
                     };
-                    listView1.Items.Add(new ListViewItem(items));
-                }
 
-            } catch (Exception e) {
-                Console.WriteLine(e.StackTrace);
+                    context.Productxes.Add(product);
+                    context.SaveChanges();
+                }
+            }
+            MessageBox.Show("สินค้าถูกเพิ่ม " + records + " รายการ", "เรียบร้อย");
+        }
+
+        private void comboBoxType_SelectedIndexChanged(object sender, EventArgs e) {
+            textBoxCountPage.Clear();
+            ResetDetail();
+            buttonInsertData.Enabled = false;
+            typeid = ((ComboboxItem)(comboBoxType.SelectedItem)).Value;
+            if (!typeid.Equals("0")) {
+                textBoxURL.Text = "https://www.jib.co.th/web/product/product_list/2/" + typeid;
+            } else {
+                textBoxURL.Text = "https://www.jib.co.th/web/product/product_list/1/42";
+            }
+            ClearData();
+            ReadData(textBoxURL.Text);
+            AddData();
+        }
+
+        private void textBoxURL_TextChanged(object sender, EventArgs e) {
+            string str = textBoxURL.Text;
+            string[] bits = str.Split('/');
+            string subStr = bits[bits.Length - 1];
+
+            if (typeIds.Contains(subStr)) {
+                int index = typeIds.IndexOf(subStr);
+                comboBoxType.SelectedIndex = index;
+            } else if (textBoxURL.Text.Equals("https://www.jib.co.th/web/product/product_list/1/42")) {
+                comboBoxType.SelectedIndex = 0;
+            } else {
+                listView1.Items.Clear();
             }
         }
 
         private void ComboboxAddItem(List<string> typeIds, List<string> typeNames) {
             List<ComboboxItem> items = new List<ComboboxItem>();
 
-            for (int i = 0; i < 11; i++) {
+            for (int i = 0; i < 12; i++) {
                 items.Add(new ComboboxItem {
                     Text = typeNames[i],
                     Value = typeIds[i]
@@ -215,7 +251,15 @@ namespace ComputerDIY {
             return bmp;
         }
 
-        void ClearData() {
+        private void ResetDetail() {
+            textBoxProductId.Clear();
+            textBoxProductName.Clear();
+            textBoxPrice.Clear();
+            textBoxProductDetail.Clear();
+            pictureBox1.Image = null;
+        }
+
+        private void ClearData() {
             id.Clear();
             promoNames.Clear();
             priceTotal.Clear();

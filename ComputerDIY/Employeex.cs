@@ -12,15 +12,10 @@ namespace ComputerDIY
     using System;
     using System.Collections.Generic;
     
-    public partial class ProductXML
+    public partial class Employeex
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Description { get; set; }
-        public int Price { get; set; }
-        public string Image { get; set; }
-        public Nullable<int> TypeId { get; set; }
-    
-        public virtual TypeXML TypeXML { get; set; }
+        public string Status { get; set; }
     }
 }
