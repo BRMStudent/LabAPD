@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LabTest {
+namespace PriTest {
     internal static class Program {
         /// <summary>
         /// The main entry point for the application.
@@ -13,7 +13,7 @@ namespace LabTest {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+            Application.Run(new Form1());
         }
     }
 }

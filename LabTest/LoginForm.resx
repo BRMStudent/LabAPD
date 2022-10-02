@@ -117,17 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="user" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="key" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\key.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="user1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="locked" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\locked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="textBoxUsername.IconLeft" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAB3RJTUUH5goCBzA5aXwqawAAAgNJREFU
+        WEfdlz1IW1EYhq9iuxV0s9hVKgq2k13q1rFTwYqjkyiIYAehFPLfNFOWdsjaTSwogrso4s+oqN3aUQpu
+        BQkY7fORD5Oefklzbs5dfOHhwr3f+74nJ8ckRr7KZrMv0un0FzhPpVK/lTP4DBM6Fl7FYnGA0jW4bQUL
+        uOG6yrVfbWFUKBQeE/rdLWyFzMKg2rtTpVJ5QNiBVfQf9sWrMfGVyWQWjfCOYOELGhNbPYT8tMI75Ifm
+        xBPlz41QL8gY1zh/sf0zVqgPZExrnL8wz1uhPkiGxvkL85QV6gNvwRuN81cul3tqhfpAxrDGxRMhp26o
+        BycaE1/dHES2/63GdCX5LNi0CtqBZ0O89YguVSqVHhG4YxVZMLstHrWHEaEP4RMFV25hE1fMfAzyHdBK
+        FDzhXLyjbAtOlC3uL+fz+SEdu6fiVfbCIL+KnnF91Yzek98AYQ5ek+Sv4DV8ZasvwXrvm7mUWfGItx4R
+        U7yqSQIPnYKOYREH8FLj/MRBW8J8bQX7IBlkrWhsZ8JYdoMCUNb49mK1s4Y5CGTPaY0ttmuUwaprDEiV
+        jhGt+1cMrDuG4LCAb1r3tzjxYzyUfyxMYyikQ3Zaaxvi5gfLkAR0vdfahniw5w4myK7WNsSqfhmDiUDX
+        hdbWxY0+HtTcwQSpSafW333JHBuDiUDXkXRGURT9AfaxefgBnh0EAAAAAElFTkSuQmCC
+</value>
   </data>
 </root>
