@@ -46,6 +46,7 @@ namespace ProjectAPD {
                 labelHidePassword.Text = "ซ่อนรหัสผ่าน";
                 textBoxPassword.PasswordChar = '\0';
             }
+            
         }
 
         private void buttonLogin_Click(object sender, EventArgs e) {
@@ -60,13 +61,13 @@ namespace ProjectAPD {
                             OwnerForm ownerForm = new OwnerForm(this, user);
                             ownerForm.Visible = true;
                         } else if (user.Status.ToLower().Equals(status[1].ToLower())) {
-                            SalemanForm salemanForm = new SalemanForm(this);
+                            SalemanForm salemanForm = new SalemanForm(this, user);
                             salemanForm.Visible = true;
                         } else if (user.Status.ToLower().Equals(status[2].ToLower())) {
-                            MornitorForm mornitorForm = new MornitorForm(this);
+                            MonitorForm mornitorForm = new MonitorForm(this, user);
                             mornitorForm.Visible = true;
                         }
-                        this.Visible = false;
+                        this.Hide();
                     }
                 } else {
                     MessageBox.Show("กรอกรหัสผ่านให้ถูกต้อง", "ข้อมูลไม่ถูกต้อง");

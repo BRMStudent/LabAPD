@@ -33,23 +33,23 @@
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.dataGridViewProduct = new Guna.UI2.WinForms.Guna2DataGridView();
             this.ProductId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productxBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.textBoxSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.comboBoxType = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
             this.textBoxPrice = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.pictureBoxProduct = new Guna.UI2.WinForms.Guna2PictureBox();
             this.textBoxProductDescription = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxProductName = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxProductId = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBoxSearch = new Guna.UI2.WinForms.Guna2TextBox();
-            this.pictureBoxProduct = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unitPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productxBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -58,11 +58,11 @@
             this.guna2Panel4.SuspendLayout();
             this.guna2Panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduct)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productxBindingSource)).BeginInit();
             this.guna2Panel3.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProduct)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productxBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -127,10 +127,10 @@
             this.dataGridViewProduct.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewProduct.AutoGenerateColumns = false;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(211)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Kanit Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(211)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
@@ -143,14 +143,14 @@
             this.dataGridViewProduct.DataSource = this.productxBindingSource;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Kanit Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(204)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewProduct.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewProduct.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewProduct.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dataGridViewProduct.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(141)))), ((int)(((byte)(253)))));
             this.dataGridViewProduct.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewProduct.MultiSelect = false;
             this.dataGridViewProduct.Name = "dataGridViewProduct";
@@ -166,7 +166,7 @@
             this.dataGridViewProduct.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
             this.dataGridViewProduct.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
             this.dataGridViewProduct.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dataGridViewProduct.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dataGridViewProduct.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(141)))), ((int)(((byte)(253)))));
             this.dataGridViewProduct.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.dataGridViewProduct.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridViewProduct.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -191,7 +191,30 @@
             this.ProductId.MinimumWidth = 6;
             this.ProductId.Name = "ProductId";
             this.ProductId.ReadOnly = true;
-            this.ProductId.Width = 75;
+            this.ProductId.Width = 117;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "ชื่อสินค้า";
+            this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // unitPriceDataGridViewTextBoxColumn
+            // 
+            this.unitPriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.unitPriceDataGridViewTextBoxColumn.DataPropertyName = "UnitPrice";
+            this.unitPriceDataGridViewTextBoxColumn.HeaderText = "ราคา";
+            this.unitPriceDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.unitPriceDataGridViewTextBoxColumn.Name = "unitPriceDataGridViewTextBoxColumn";
+            this.unitPriceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.unitPriceDataGridViewTextBoxColumn.Width = 79;
+            // 
+            // productxBindingSource
+            // 
+            this.productxBindingSource.DataSource = typeof(ProjectAPD.Productx);
             // 
             // guna2Panel3
             // 
@@ -202,6 +225,32 @@
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(849, 86);
             this.guna2Panel3.TabIndex = 0;
+            // 
+            // textBoxSearch
+            // 
+            this.textBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxSearch.BorderRadius = 15;
+            this.textBoxSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBoxSearch.DefaultText = "";
+            this.textBoxSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.textBoxSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.textBoxSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBoxSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBoxSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBoxSearch.Font = new System.Drawing.Font("Kanit Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBoxSearch.IconRight = global::ProjectAPD.Properties.Resources.search;
+            this.textBoxSearch.IconRightOffset = new System.Drawing.Point(10, 0);
+            this.textBoxSearch.Location = new System.Drawing.Point(23, 22);
+            this.textBoxSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxSearch.Name = "textBoxSearch";
+            this.textBoxSearch.PasswordChar = '\0';
+            this.textBoxSearch.PlaceholderText = "ค้นหาจากชื่อ";
+            this.textBoxSearch.SelectedText = "";
+            this.textBoxSearch.Size = new System.Drawing.Size(371, 45);
+            this.textBoxSearch.TabIndex = 2;
+            this.textBoxSearch.TextOffset = new System.Drawing.Point(10, 0);
             // 
             // comboBoxType
             // 
@@ -259,7 +308,7 @@
             this.textBoxPrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.textBoxPrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.textBoxPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBoxPrice.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.textBoxPrice.Font = new System.Drawing.Font("Kanit", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.textBoxPrice.Location = new System.Drawing.Point(20, 374);
             this.textBoxPrice.Margin = new System.Windows.Forms.Padding(20, 3, 20, 3);
@@ -270,6 +319,7 @@
             this.textBoxPrice.SelectedText = "";
             this.textBoxPrice.Size = new System.Drawing.Size(293, 45);
             this.textBoxPrice.TabIndex = 7;
+            this.textBoxPrice.TextOffset = new System.Drawing.Point(5, 0);
             // 
             // label4
             // 
@@ -280,6 +330,20 @@
             this.label4.Size = new System.Drawing.Size(45, 27);
             this.label4.TabIndex = 8;
             this.label4.Text = "ราคา";
+            // 
+            // pictureBoxProduct
+            // 
+            this.pictureBoxProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBoxProduct.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxProduct.ImageRotate = 0F;
+            this.pictureBoxProduct.Location = new System.Drawing.Point(49, 446);
+            this.pictureBoxProduct.Name = "pictureBoxProduct";
+            this.pictureBoxProduct.Size = new System.Drawing.Size(250, 160);
+            this.pictureBoxProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxProduct.TabIndex = 6;
+            this.pictureBoxProduct.TabStop = false;
             // 
             // textBoxProductDescription
             // 
@@ -293,7 +357,7 @@
             this.textBoxProductDescription.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.textBoxProductDescription.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.textBoxProductDescription.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBoxProductDescription.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.textBoxProductDescription.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxProductDescription.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.textBoxProductDescription.Location = new System.Drawing.Point(20, 199);
             this.textBoxProductDescription.Margin = new System.Windows.Forms.Padding(20, 3, 20, 3);
@@ -305,6 +369,7 @@
             this.textBoxProductDescription.SelectedText = "";
             this.textBoxProductDescription.Size = new System.Drawing.Size(293, 142);
             this.textBoxProductDescription.TabIndex = 4;
+            this.textBoxProductDescription.TextOffset = new System.Drawing.Point(5, 0);
             // 
             // label3
             // 
@@ -328,7 +393,7 @@
             this.textBoxProductName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.textBoxProductName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.textBoxProductName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBoxProductName.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.textBoxProductName.Font = new System.Drawing.Font("Kanit", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxProductName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.textBoxProductName.Location = new System.Drawing.Point(20, 120);
             this.textBoxProductName.Margin = new System.Windows.Forms.Padding(20, 3, 20, 3);
@@ -339,6 +404,7 @@
             this.textBoxProductName.SelectedText = "";
             this.textBoxProductName.Size = new System.Drawing.Size(293, 45);
             this.textBoxProductName.TabIndex = 2;
+            this.textBoxProductName.TextOffset = new System.Drawing.Point(5, 0);
             // 
             // label2
             // 
@@ -362,7 +428,7 @@
             this.textBoxProductId.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.textBoxProductId.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.textBoxProductId.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBoxProductId.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.textBoxProductId.Font = new System.Drawing.Font("Kanit", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxProductId.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.textBoxProductId.Location = new System.Drawing.Point(20, 41);
             this.textBoxProductId.Margin = new System.Windows.Forms.Padding(20, 3, 20, 3);
@@ -373,6 +439,7 @@
             this.textBoxProductId.SelectedText = "";
             this.textBoxProductId.Size = new System.Drawing.Size(293, 45);
             this.textBoxProductId.TabIndex = 0;
+            this.textBoxProductId.TextOffset = new System.Drawing.Point(5, 0);
             // 
             // label1
             // 
@@ -383,68 +450,6 @@
             this.label1.Size = new System.Drawing.Size(78, 27);
             this.label1.TabIndex = 1;
             this.label1.Text = "รหัสสินค้า";
-            // 
-            // textBoxSearch
-            // 
-            this.textBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxSearch.BorderRadius = 15;
-            this.textBoxSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBoxSearch.DefaultText = "";
-            this.textBoxSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.textBoxSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.textBoxSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.textBoxSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.textBoxSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBoxSearch.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBoxSearch.IconRight = global::ProjectAPD.Properties.Resources.search;
-            this.textBoxSearch.IconRightOffset = new System.Drawing.Point(10, 0);
-            this.textBoxSearch.Location = new System.Drawing.Point(23, 22);
-            this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.PasswordChar = '\0';
-            this.textBoxSearch.PlaceholderText = "ค้นหาจากชื่อ";
-            this.textBoxSearch.SelectedText = "";
-            this.textBoxSearch.Size = new System.Drawing.Size(371, 45);
-            this.textBoxSearch.TabIndex = 2;
-            this.textBoxSearch.TextOffset = new System.Drawing.Point(10, 0);
-            // 
-            // pictureBoxProduct
-            // 
-            this.pictureBoxProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBoxProduct.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxProduct.ImageRotate = 0F;
-            this.pictureBoxProduct.Location = new System.Drawing.Point(69, 439);
-            this.pictureBoxProduct.Name = "pictureBoxProduct";
-            this.pictureBoxProduct.Size = new System.Drawing.Size(200, 160);
-            this.pictureBoxProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxProduct.TabIndex = 6;
-            this.pictureBoxProduct.TabStop = false;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "ชื่อสิค้า";
-            this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // unitPriceDataGridViewTextBoxColumn
-            // 
-            this.unitPriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.unitPriceDataGridViewTextBoxColumn.DataPropertyName = "UnitPrice";
-            this.unitPriceDataGridViewTextBoxColumn.HeaderText = "ราคา";
-            this.unitPriceDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.unitPriceDataGridViewTextBoxColumn.Name = "unitPriceDataGridViewTextBoxColumn";
-            this.unitPriceDataGridViewTextBoxColumn.ReadOnly = true;
-            this.unitPriceDataGridViewTextBoxColumn.Width = 57;
-            // 
-            // productxBindingSource
-            // 
-            this.productxBindingSource.DataSource = typeof(ProjectAPD.Productx);
             // 
             // ProductsForm
             // 
@@ -463,12 +468,12 @@
             this.guna2Panel4.ResumeLayout(false);
             this.guna2Panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduct)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productxBindingSource)).EndInit();
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel8.ResumeLayout(false);
             this.guna2Panel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProduct)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productxBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -494,9 +499,9 @@
         private Guna.UI2.WinForms.Guna2ComboBox comboBoxType;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
         private Guna.UI2.WinForms.Guna2DataGridView dataGridViewProduct;
+        private Guna.UI2.WinForms.Guna2TextBox textBoxSearch;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductId;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn unitPriceDataGridViewTextBoxColumn;
-        private Guna.UI2.WinForms.Guna2TextBox textBoxSearch;
     }
 }

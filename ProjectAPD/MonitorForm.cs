@@ -15,17 +15,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProjectAPD {
-    public partial class OwnerForm : Form {
-
+    public partial class MonitorForm : Form {
         LoginForm loginForm;
         Employeex userData;
+
 
         //component
         IconButton currentButton;
         Guna2Panel selectedPanel;
         Form currentChildForm;
-
-        public OwnerForm(LoginForm loginForm, Employeex userData) {
+        public MonitorForm(LoginForm loginForm, Employeex userData) {
             InitializeComponent();
             this.loginForm = loginForm;
             this.userData = userData;
@@ -35,13 +34,12 @@ namespace ProjectAPD {
             }
             //btn
             selectedPanel = new Guna2Panel();
-            selectedPanel.Size = new Size(7, productsButton.Size.Height);
+            selectedPanel.Size = new Size(7, mngProductsButton.Size.Height);
             menuPanel.Controls.Add(selectedPanel);
             selectedPanel.BackColor = Color.White;
         }
-
         private void OpenChildForm(Form childForm) {
-            if (currentChildForm != null) { 
+            if (currentChildForm != null) {
                 currentChildForm.Close();
             }
             currentChildForm = childForm;
@@ -67,7 +65,7 @@ namespace ProjectAPD {
         }
 
         private void UnselecteButton() {
-            if (currentButton != null) { 
+            if (currentButton != null) {
                 currentButton.BackColor = Color.FromArgb(25, 118, 211);
             }
         }
@@ -77,12 +75,12 @@ namespace ProjectAPD {
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-        private void titleBar_MouseDown(object sender, MouseEventArgs e) {
+        private void titleBar_MouseDown_1(object sender, MouseEventArgs e) {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void closeBox_Click(object sender, EventArgs e) {
+        private void closeBox_Click_1(object sender, EventArgs e) {
             Application.Exit();
         }
 
@@ -90,22 +88,11 @@ namespace ProjectAPD {
             loginForm.Visible = true;
             this.Close();
         }
-
-        private void productsButton_Click(object sender, EventArgs e) {
+        
+        private void mngProductsButton_Click(object sender, EventArgs e) {
             SelectedButton(sender);
-            OpenChildForm(new ProductsForm());
+            OpenChildForm(new MngProductForm());
         }
-
-        private void buttonEmployee_Click(object sender, EventArgs e) {
-            SelectedButton(sender);
-            OpenChildForm(new EmployeeForm());
-        }
-
-        private void buttonCustomer_Click(object sender, EventArgs e) {
-            SelectedButton(sender);
-            OpenChildForm(new CustomerForm());
-        }
-
         private Image LoadImage(string url) {
             HttpWebRequest myHttpWebRequest = (HttpWebRequest)WebRequest.Create(url);
             myHttpWebRequest.UserAgent = "Chrome/105.0.0.0";

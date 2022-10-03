@@ -8,12 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProjectAPD.Forms {
-    public partial class CustomerForm : Form {
-        ProjectEntities context = new ProjectEntities();
-        public CustomerForm() {
+namespace ProjectAPD.Forms.CRUD {
+    public partial class InsertForm : Form {
+        public InsertForm() {
             InitializeComponent();
-            customerxBindingSource.DataSource = context.Customerxes.ToList();
         }
     }
 }

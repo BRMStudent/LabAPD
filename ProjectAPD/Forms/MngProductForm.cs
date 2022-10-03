@@ -3,17 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.IO;
 using System.Linq;
-using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProjectAPD.Forms {
-    public partial class ProductsForm : Form {
+    public partial class MngProductForm : Form {
         ProjectEntities context = new ProjectEntities();
-
         List<string> typeNames = new List<string> {
             "ทั้งหมด",
             "ซีพียู คอมพิวเตอร์",
@@ -31,8 +28,7 @@ namespace ProjectAPD.Forms {
         List<string> typeIds = new List<string> {
             "0","43", "46", "51", "53", "54", "55", "56", "57", "1433", "1617", "1616"
         };
-
-        public ProductsForm() {
+        public MngProductForm() {
             InitializeComponent();
             productxBindingSource.DataSource = context.Productxes.ToList();
             ComboboxAddItem(typeIds, typeNames);
@@ -60,27 +56,6 @@ namespace ProjectAPD.Forms {
             } else {
                 productxBindingSource.DataSource = context.Productxes.ToList();
             }
-        }
-
-        private void dataGridViewProduct_CellClick(object sender, DataGridViewCellEventArgs e) {
-            string id = dataGridViewProduct.SelectedRows[0].Cells[0].Value.ToString();
-
-            Productx product = context.Productxes.Where((c) => c.ProductId.ToString() == id).First();
-
-            textBoxProductId.Text = product.ProductId.ToString();
-            textBoxProductName.Text = product.Name;
-            textBoxProductDescription.Text = product.Description;
-            textBoxPrice.Text = product.UnitPrice.ToString();
-            pictureBoxProduct.Image = LoadImage(product.Image);
-        }
-        private Image LoadImage(string url) {
-            HttpWebRequest myHttpWebRequest = (HttpWebRequest)WebRequest.Create(url);
-            myHttpWebRequest.UserAgent = "Chrome/105.0.0.0";
-            HttpWebResponse myHttpWebResponse = (HttpWebResponse)myHttpWebRequest.GetResponse();
-            Stream streamResponse = myHttpWebResponse.GetResponseStream();
-            Bitmap bmp = new Bitmap(streamResponse);
-            streamResponse.Dispose();
-            return bmp;
         }
     }
 }

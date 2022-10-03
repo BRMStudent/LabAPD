@@ -1,5 +1,5 @@
 ﻿namespace ProjectAPD {
-    partial class OwnerForm {
+    partial class MonitorForm {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -24,25 +24,21 @@
         /// </summary>
         private void InitializeComponent() {
             this.titleBar = new Guna.UI2.WinForms.Guna2Panel();
-            this.profilePictureBox = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.labelName = new System.Windows.Forms.Label();
             this.lblTag = new System.Windows.Forms.Label();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.minimizeBox = new Guna.UI2.WinForms.Guna2ControlBox();
             this.closeBox = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.container = new Guna.UI2.WinForms.Guna2Panel();
-            this.logoutButton = new FontAwesome.Sharp.IconButton();
-            this.productsButton = new FontAwesome.Sharp.IconButton();
-            this.buttonEmployee = new FontAwesome.Sharp.IconButton();
-            this.buttonCustomer = new FontAwesome.Sharp.IconButton();
             this.menuPanel = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.container = new Guna.UI2.WinForms.Guna2Panel();
+            this.mngProductsButton = new FontAwesome.Sharp.IconButton();
+            this.logoutButton = new FontAwesome.Sharp.IconButton();
+            this.profilePictureBox = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.titleBar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).BeginInit();
-            this.guna2Panel1.SuspendLayout();
             this.menuPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // titleBar
@@ -60,21 +56,8 @@
             this.titleBar.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.titleBar.Name = "titleBar";
             this.titleBar.Size = new System.Drawing.Size(1370, 100);
-            this.titleBar.TabIndex = 4;
-            this.titleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.titleBar_MouseDown);
-            // 
-            // profilePictureBox
-            // 
-            this.profilePictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.profilePictureBox.Image = global::ProjectAPD.Properties.Resources.user;
-            this.profilePictureBox.ImageRotate = 0F;
-            this.profilePictureBox.Location = new System.Drawing.Point(820, 24);
-            this.profilePictureBox.Name = "profilePictureBox";
-            this.profilePictureBox.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.profilePictureBox.Size = new System.Drawing.Size(50, 50);
-            this.profilePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.profilePictureBox.TabIndex = 3;
-            this.profilePictureBox.TabStop = false;
+            this.titleBar.TabIndex = 5;
+            this.titleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.titleBar_MouseDown_1);
             // 
             // labelName
             // 
@@ -95,9 +78,9 @@
             this.lblTag.ForeColor = System.Drawing.Color.White;
             this.lblTag.Location = new System.Drawing.Point(136, 30);
             this.lblTag.Name = "lblTag";
-            this.lblTag.Size = new System.Drawing.Size(105, 44);
+            this.lblTag.Size = new System.Drawing.Size(123, 44);
             this.lblTag.TabIndex = 1;
-            this.lblTag.Text = "Owner";
+            this.lblTag.Text = "Monitor";
             // 
             // guna2ControlBox1
             // 
@@ -135,16 +118,7 @@
             this.closeBox.Name = "closeBox";
             this.closeBox.Size = new System.Drawing.Size(80, 50);
             this.closeBox.TabIndex = 0;
-            this.closeBox.Click += new System.EventHandler(this.closeBox_Click);
-            // 
-            // guna2Panel2
-            // 
-            this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(211)))));
-            this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.guna2Panel2.Location = new System.Drawing.Point(1360, 100);
-            this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(10, 668);
-            this.guna2Panel2.TabIndex = 5;
+            this.closeBox.Click += new System.EventHandler(this.closeBox_Click_1);
             // 
             // guna2Panel3
             // 
@@ -152,26 +126,56 @@
             this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.guna2Panel3.Location = new System.Drawing.Point(0, 758);
             this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(1360, 10);
-            this.guna2Panel3.TabIndex = 6;
+            this.guna2Panel3.Size = new System.Drawing.Size(1370, 10);
+            this.guna2Panel3.TabIndex = 7;
             // 
-            // guna2Panel1
+            // menuPanel
             // 
-            this.guna2Panel1.Controls.Add(this.container);
-            this.guna2Panel1.Controls.Add(this.menuPanel);
-            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 100);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1360, 658);
-            this.guna2Panel1.TabIndex = 7;
+            this.menuPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(211)))));
+            this.menuPanel.Controls.Add(this.mngProductsButton);
+            this.menuPanel.Controls.Add(this.logoutButton);
+            this.menuPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.menuPanel.Location = new System.Drawing.Point(0, 100);
+            this.menuPanel.Name = "menuPanel";
+            this.menuPanel.Size = new System.Drawing.Size(144, 658);
+            this.menuPanel.TabIndex = 8;
+            // 
+            // guna2Panel2
+            // 
+            this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(211)))));
+            this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.guna2Panel2.Location = new System.Drawing.Point(1360, 100);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.Size = new System.Drawing.Size(10, 658);
+            this.guna2Panel2.TabIndex = 9;
             // 
             // container
             // 
             this.container.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.container.Location = new System.Drawing.Point(144, 0);
+            this.container.Location = new System.Drawing.Point(144, 100);
             this.container.Name = "container";
             this.container.Size = new System.Drawing.Size(1216, 658);
-            this.container.TabIndex = 1;
+            this.container.TabIndex = 10;
+            // 
+            // mngProductsButton
+            // 
+            this.mngProductsButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.mngProductsButton.FlatAppearance.BorderSize = 0;
+            this.mngProductsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.mngProductsButton.Font = new System.Drawing.Font("Kanit", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mngProductsButton.ForeColor = System.Drawing.Color.White;
+            this.mngProductsButton.IconChar = FontAwesome.Sharp.IconChar.Tags;
+            this.mngProductsButton.IconColor = System.Drawing.Color.White;
+            this.mngProductsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.mngProductsButton.Location = new System.Drawing.Point(0, 0);
+            this.mngProductsButton.Name = "mngProductsButton";
+            this.mngProductsButton.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.mngProductsButton.Size = new System.Drawing.Size(144, 115);
+            this.mngProductsButton.TabIndex = 2;
+            this.mngProductsButton.Text = "จัดการคลังสินค้า";
+            this.mngProductsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.mngProductsButton.UseVisualStyleBackColor = true;
+            this.mngProductsButton.Click += new System.EventHandler(this.mngProductsButton_Click);
             // 
             // logoutButton
             // 
@@ -194,118 +198,55 @@
             this.logoutButton.UseVisualStyleBackColor = true;
             this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
             // 
-            // productsButton
+            // profilePictureBox
             // 
-            this.productsButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.productsButton.FlatAppearance.BorderSize = 0;
-            this.productsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.productsButton.Font = new System.Drawing.Font("Kanit", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.productsButton.ForeColor = System.Drawing.Color.White;
-            this.productsButton.IconChar = FontAwesome.Sharp.IconChar.Tags;
-            this.productsButton.IconColor = System.Drawing.Color.White;
-            this.productsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.productsButton.Location = new System.Drawing.Point(0, 0);
-            this.productsButton.Name = "productsButton";
-            this.productsButton.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.productsButton.Size = new System.Drawing.Size(144, 115);
-            this.productsButton.TabIndex = 2;
-            this.productsButton.Text = "คลังสินค้า";
-            this.productsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.productsButton.UseVisualStyleBackColor = true;
-            this.productsButton.Click += new System.EventHandler(this.productsButton_Click);
+            this.profilePictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.profilePictureBox.Image = global::ProjectAPD.Properties.Resources.user;
+            this.profilePictureBox.ImageRotate = 0F;
+            this.profilePictureBox.Location = new System.Drawing.Point(820, 24);
+            this.profilePictureBox.Name = "profilePictureBox";
+            this.profilePictureBox.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.profilePictureBox.Size = new System.Drawing.Size(50, 50);
+            this.profilePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.profilePictureBox.TabIndex = 3;
+            this.profilePictureBox.TabStop = false;
             // 
-            // buttonEmployee
-            // 
-            this.buttonEmployee.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonEmployee.FlatAppearance.BorderSize = 0;
-            this.buttonEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonEmployee.Font = new System.Drawing.Font("Kanit", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEmployee.ForeColor = System.Drawing.Color.White;
-            this.buttonEmployee.IconChar = FontAwesome.Sharp.IconChar.UserFriends;
-            this.buttonEmployee.IconColor = System.Drawing.Color.White;
-            this.buttonEmployee.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.buttonEmployee.Location = new System.Drawing.Point(0, 115);
-            this.buttonEmployee.Name = "buttonEmployee";
-            this.buttonEmployee.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.buttonEmployee.Size = new System.Drawing.Size(144, 115);
-            this.buttonEmployee.TabIndex = 3;
-            this.buttonEmployee.Text = "ข้อมูลพนักงาน";
-            this.buttonEmployee.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.buttonEmployee.UseVisualStyleBackColor = true;
-            this.buttonEmployee.Click += new System.EventHandler(this.buttonEmployee_Click);
-            // 
-            // buttonCustomer
-            // 
-            this.buttonCustomer.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonCustomer.FlatAppearance.BorderSize = 0;
-            this.buttonCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCustomer.Font = new System.Drawing.Font("Kanit", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCustomer.ForeColor = System.Drawing.Color.White;
-            this.buttonCustomer.IconChar = FontAwesome.Sharp.IconChar.PeopleGroup;
-            this.buttonCustomer.IconColor = System.Drawing.Color.White;
-            this.buttonCustomer.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.buttonCustomer.Location = new System.Drawing.Point(0, 230);
-            this.buttonCustomer.Name = "buttonCustomer";
-            this.buttonCustomer.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.buttonCustomer.Size = new System.Drawing.Size(144, 115);
-            this.buttonCustomer.TabIndex = 4;
-            this.buttonCustomer.Text = "ข้อมูลลูกค้า";
-            this.buttonCustomer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.buttonCustomer.UseVisualStyleBackColor = true;
-            this.buttonCustomer.Click += new System.EventHandler(this.buttonCustomer_Click);
-            // 
-            // menuPanel
-            // 
-            this.menuPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(211)))));
-            this.menuPanel.Controls.Add(this.buttonCustomer);
-            this.menuPanel.Controls.Add(this.buttonEmployee);
-            this.menuPanel.Controls.Add(this.productsButton);
-            this.menuPanel.Controls.Add(this.logoutButton);
-            this.menuPanel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.menuPanel.Location = new System.Drawing.Point(0, 0);
-            this.menuPanel.Name = "menuPanel";
-            this.menuPanel.Size = new System.Drawing.Size(144, 658);
-            this.menuPanel.TabIndex = 0;
-            // 
-            // OwnerForm
+            // MonitorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1370, 768);
-            this.Controls.Add(this.guna2Panel1);
-            this.Controls.Add(this.guna2Panel3);
+            this.Controls.Add(this.container);
             this.Controls.Add(this.guna2Panel2);
+            this.Controls.Add(this.menuPanel);
+            this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.titleBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "OwnerForm";
+            this.Name = "MonitorForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "OwnerForm";
+            this.Text = "MornitorForm";
             this.titleBar.ResumeLayout(false);
             this.titleBar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).EndInit();
-            this.guna2Panel1.ResumeLayout(false);
             this.menuPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
         private Guna.UI2.WinForms.Guna2Panel titleBar;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox profilePictureBox;
+        private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label lblTag;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private Guna.UI2.WinForms.Guna2ControlBox minimizeBox;
         private Guna.UI2.WinForms.Guna2ControlBox closeBox;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private System.Windows.Forms.Label labelName;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox profilePictureBox;
-        private Guna.UI2.WinForms.Guna2Panel container;
         private Guna.UI2.WinForms.Guna2Panel menuPanel;
-        private FontAwesome.Sharp.IconButton buttonCustomer;
-        private FontAwesome.Sharp.IconButton buttonEmployee;
-        private FontAwesome.Sharp.IconButton productsButton;
+        private FontAwesome.Sharp.IconButton mngProductsButton;
         private FontAwesome.Sharp.IconButton logoutButton;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+        private Guna.UI2.WinForms.Guna2Panel container;
     }
 }

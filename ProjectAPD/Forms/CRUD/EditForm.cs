@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProjectAPD.Forms {
-    public partial class HomeForm : Form {
-        public HomeForm() {
+namespace ProjectAPD.Forms.CRUD {
+    public partial class EditForm : Form {
+        public EditForm() {
             InitializeComponent();
         }
     }

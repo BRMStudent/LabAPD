@@ -1,5 +1,5 @@
-﻿namespace ProjectAPD.Forms {
-    partial class HomeForm {
+﻿namespace ProjectAPD.Forms.CRUD {
+    partial class EditForm {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -26,7 +26,7 @@
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "HomeForm";
+            this.Text = "EditForm";
         }
 
         #endregion

@@ -101,7 +101,7 @@
             this.mainPanel.Location = new System.Drawing.Point(0, 51);
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(400, 454);
-            this.mainPanel.TabIndex = 2;
+            this.mainPanel.TabIndex = 0;
             // 
             // loginPanel
             // 
@@ -164,7 +164,7 @@
             this.buttonLogin.Location = new System.Drawing.Point(79, 316);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(180, 45);
-            this.buttonLogin.TabIndex = 3;
+            this.buttonLogin.TabIndex = 2;
             this.buttonLogin.Text = "เข้าสู่ระบบ";
             this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
@@ -207,7 +207,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxPassword.BorderRadius = 15;
             this.textBoxPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBoxPassword.DefaultText = "1234456";
+            this.textBoxPassword.DefaultText = "1234";
             this.textBoxPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.textBoxPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.textBoxPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -226,7 +226,7 @@
             this.textBoxPassword.PlaceholderText = "กรอกรหัสผ่าน";
             this.textBoxPassword.SelectedText = "";
             this.textBoxPassword.Size = new System.Drawing.Size(302, 45);
-            this.textBoxPassword.TabIndex = 0;
+            this.textBoxPassword.TabIndex = 1;
             this.textBoxPassword.TextOffset = new System.Drawing.Point(5, 0);
             // 
             // textBoxUsername
@@ -235,7 +235,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxUsername.BorderRadius = 15;
             this.textBoxUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBoxUsername.DefaultText = "baramee001";
+            this.textBoxUsername.DefaultText = "saleman";
             this.textBoxUsername.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.textBoxUsername.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.textBoxUsername.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -270,7 +270,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "0";
             this.titleBar.ResumeLayout(false);
             this.titleBar.PerformLayout();
             this.mainPanel.ResumeLayout(false);
