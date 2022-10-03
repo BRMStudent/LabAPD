@@ -161,7 +161,7 @@
             this.buttonLogin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(211)))));
             this.buttonLogin.Font = new System.Drawing.Font("Kanit", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLogin.ForeColor = System.Drawing.Color.White;
-            this.buttonLogin.Location = new System.Drawing.Point(79, 313);
+            this.buttonLogin.Location = new System.Drawing.Point(79, 316);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(180, 45);
             this.buttonLogin.TabIndex = 3;
@@ -207,7 +207,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxPassword.BorderRadius = 15;
             this.textBoxPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBoxPassword.DefaultText = "";
+            this.textBoxPassword.DefaultText = "1234456";
             this.textBoxPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.textBoxPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.textBoxPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -235,7 +235,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxUsername.BorderRadius = 15;
             this.textBoxUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBoxUsername.DefaultText = "";
+            this.textBoxUsername.DefaultText = "baramee001";
             this.textBoxUsername.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.textBoxUsername.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.textBoxUsername.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));

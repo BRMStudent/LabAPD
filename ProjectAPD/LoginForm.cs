@@ -17,8 +17,9 @@ namespace ProjectAPD {
         List<string> status = new List<string>() { 
             "owner",
             "saleman",
-            "mornitor"
+            "monitor"
         };
+
 
         public LoginForm() {
             InitializeComponent();
@@ -56,22 +57,23 @@ namespace ProjectAPD {
                     var user = context.Employeexes.Where(emp => emp.Username == textBoxUsername.Text).First();
                     if (user != null) {
                         if (user.Status.ToLower().Equals(status[0].ToLower())) {
-                            OwnerForm ownerForm = new OwnerForm();
+                            OwnerForm ownerForm = new OwnerForm(this, user);
                             ownerForm.Visible = true;
                         } else if (user.Status.ToLower().Equals(status[1].ToLower())) {
-                            SalemanForm salemanForm = new SalemanForm();
+                            SalemanForm salemanForm = new SalemanForm(this);
                             salemanForm.Visible = true;
                         } else if (user.Status.ToLower().Equals(status[2].ToLower())) {
-                            MornitorForm mornitorForm = new MornitorForm();
+                            MornitorForm mornitorForm = new MornitorForm(this);
                             mornitorForm.Visible = true;
                         }
                         this.Visible = false;
                     }
+                } else {
+                    MessageBox.Show("กรอกรหัสผ่านให้ถูกต้อง", "ข้อมูลไม่ถูกต้อง");
                 }
             } else { 
-                MessageBox.Show("กรอกชื่อผู้ใช้และรหัสผ่านให้ถูกต้อง", "ข้อมูลไม่ถูกต้อง");
+                MessageBox.Show("กรอกชื่อผู้ใช้ให้ถูกต้อง", "ข้อมูลไม่ถูกต้อง");
             }
         }
     }
-
 }
