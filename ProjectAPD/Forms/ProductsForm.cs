@@ -82,5 +82,10 @@ namespace ProjectAPD.Forms {
             streamResponse.Dispose();
             return bmp;
         }
+
+        private void textBoxSearch_TextChanged(object sender, EventArgs e) {
+            comboBoxType.SelectedIndex = 0;
+            productxBindingSource.DataSource = context.Productxes.Where(p => p.Name.Contains(textBoxSearch.Text) || p.ProductId.ToString().Contains(textBoxSearch.Text)).ToList();
+        }
     }
 }

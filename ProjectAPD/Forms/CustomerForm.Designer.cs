@@ -165,6 +165,7 @@
             this.textBoxSearch.Size = new System.Drawing.Size(371, 50);
             this.textBoxSearch.TabIndex = 3;
             this.textBoxSearch.TextOffset = new System.Drawing.Point(10, 0);
+            this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
             // 
             // buttonEdit
             // 
@@ -186,6 +187,7 @@
             this.buttonEdit.Text = "แก้ไข";
             this.buttonEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.buttonEdit.UseVisualStyleBackColor = false;
+            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
             // 
             // buttonDelete
             // 
@@ -207,6 +209,7 @@
             this.buttonDelete.Text = "ลบ";
             this.buttonDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.buttonDelete.UseVisualStyleBackColor = false;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // buttonAdd
             // 
@@ -228,6 +231,7 @@
             this.buttonAdd.Text = "เพิ่ม";
             this.buttonAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.buttonAdd.UseVisualStyleBackColor = false;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // idDataGridViewTextBoxColumn
             // 

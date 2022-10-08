@@ -45,6 +45,9 @@
     <Reference Include="Guna.UI2, Version=2.0.3.5, Culture=neutral, PublicKeyToken=4015e4865bda28a4, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.3.5\lib\net40\Guna.UI2.dll</HintPath>
     </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.11.46.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.11.46\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -75,17 +78,17 @@
     <Compile Include="Employeex.cs">
       <DependentUpon>ProjectModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Forms\CRUD\EditForm.cs">
+    <Compile Include="Forms\CRUD\ManageCustomerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\CRUD\EditForm.Designer.cs">
-      <DependentUpon>EditForm.cs</DependentUpon>
+    <Compile Include="Forms\CRUD\ManageCustomerForm.Designer.cs">
+      <DependentUpon>ManageCustomerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\CRUD\InsertForm.cs">
+    <Compile Include="Forms\CRUD\ManageEmpForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\CRUD\InsertForm.Designer.cs">
-      <DependentUpon>InsertForm.cs</DependentUpon>
+    <Compile Include="Forms\CRUD\ManageEmpForm.Designer.cs">
+      <DependentUpon>ManageEmpForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\CustomerForm.cs">
       <SubType>Form</SubType>
@@ -104,6 +107,12 @@
     </Compile>
     <Compile Include="Forms\MngProductForm.Designer.cs">
       <DependentUpon>MngProductForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProductDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProductDetailForm.Designer.cs">
+      <DependentUpon>ProductDetailForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ProductsForm.cs">
       <SubType>Form</SubType>
@@ -161,6 +170,12 @@
     <Compile Include="TypeProductx.cs">
       <DependentUpon>ProjectModel.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\CRUD\ManageCustomerForm.resx">
+      <DependentUpon>ManageCustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CRUD\ManageEmpForm.resx">
+      <DependentUpon>ManageEmpForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CustomerForm.resx">
       <DependentUpon>CustomerForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -169,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MngProductForm.resx">
       <DependentUpon>MngProductForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProductDetailForm.resx">
+      <DependentUpon>ProductDetailForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProductsForm.resx">
       <DependentUpon>ProductsForm.cs</DependentUpon>
