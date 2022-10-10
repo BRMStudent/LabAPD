@@ -102,16 +102,16 @@
     <Compile Include="Employeex.cs">
       <DependentUpon>ProjectsModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Forms\dialog\ManageCustomerForm.cs">
+    <Compile Include="Forms\DialogForm\ManageCustomerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\dialog\ManageCustomerForm.Designer.cs">
+    <Compile Include="Forms\DialogForm\ManageCustomerForm.Designer.cs">
       <DependentUpon>ManageCustomerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\dialog\ManageEmpForm.cs">
+    <Compile Include="Forms\DialogForm\ManageEmpForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\dialog\ManageEmpForm.Designer.cs">
+    <Compile Include="Forms\DialogForm\ManageEmpForm.Designer.cs">
       <DependentUpon>ManageEmpForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\CustomerForm.cs">
@@ -120,10 +120,10 @@
     <Compile Include="Forms\CustomerForm.Designer.cs">
       <DependentUpon>CustomerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\dialog\ScanCamForm.cs">
+    <Compile Include="Forms\DialogForm\ScanCamForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\dialog\ScanCamForm.Designer.cs">
+    <Compile Include="Forms\DialogForm\ScanCamForm.Designer.cs">
       <DependentUpon>ScanCamForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\EmployeeForm.cs">
@@ -138,10 +138,10 @@
     <Compile Include="Forms\MngProductForm.Designer.cs">
       <DependentUpon>MngProductForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\dialog\ProductDetailForm.cs">
+    <Compile Include="Forms\DialogForm\ProductDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\dialog\ProductDetailForm.Designer.cs">
+    <Compile Include="Forms\DialogForm\ProductDetailForm.Designer.cs">
       <DependentUpon>ProductDetailForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ProductsForm.cs">
@@ -206,16 +206,16 @@
     <Compile Include="TypeProductx.cs">
       <DependentUpon>ProjectsModel.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Forms\dialog\ManageCustomerForm.resx">
+    <EmbeddedResource Include="Forms\DialogForm\ManageCustomerForm.resx">
       <DependentUpon>ManageCustomerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\dialog\ManageEmpForm.resx">
+    <EmbeddedResource Include="Forms\DialogForm\ManageEmpForm.resx">
       <DependentUpon>ManageEmpForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CustomerForm.resx">
       <DependentUpon>CustomerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\dialog\ScanCamForm.resx">
+    <EmbeddedResource Include="Forms\DialogForm\ScanCamForm.resx">
       <DependentUpon>ScanCamForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EmployeeForm.resx">
@@ -224,7 +224,7 @@
     <EmbeddedResource Include="Forms\MngProductForm.resx">
       <DependentUpon>MngProductForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\dialog\ProductDetailForm.resx">
+    <EmbeddedResource Include="Forms\DialogForm\ProductDetailForm.resx">
       <DependentUpon>ProductDetailForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProductsForm.resx">
