@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace ProjectAPD.Forms {
     public partial class CustomerForm : Form {
-        ProjectEntities context = new ProjectEntities();
+        ProjectEntities1 context = new ProjectEntities1();
         ManageCustomerForm mCusForm;
         public CustomerForm() {
             InitializeComponent();

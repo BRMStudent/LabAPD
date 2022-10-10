@@ -13,7 +13,7 @@ namespace ProjectAPD {
     public partial class LoginForm : Form {
 
         bool passwordHide = true;
-        ProjectEntities context = new ProjectEntities();
+        ProjectEntities1 context = new ProjectEntities1();
         List<string> status = new List<string>() { 
             "owner",
             "saleman",

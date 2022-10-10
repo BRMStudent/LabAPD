@@ -32,6 +32,7 @@
             this.lblTag = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.menuPanel = new Guna.UI2.WinForms.Guna2Panel();
+            this.buttonSell = new FontAwesome.Sharp.IconButton();
             this.buttonCustomer = new FontAwesome.Sharp.IconButton();
             this.productsButton = new FontAwesome.Sharp.IconButton();
             this.logoutButton = new FontAwesome.Sharp.IconButton();
@@ -146,6 +147,7 @@
             // menuPanel
             // 
             this.menuPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(211)))));
+            this.menuPanel.Controls.Add(this.buttonSell);
             this.menuPanel.Controls.Add(this.buttonCustomer);
             this.menuPanel.Controls.Add(this.productsButton);
             this.menuPanel.Controls.Add(this.logoutButton);
@@ -154,6 +156,26 @@
             this.menuPanel.Name = "menuPanel";
             this.menuPanel.Size = new System.Drawing.Size(144, 658);
             this.menuPanel.TabIndex = 7;
+            // 
+            // buttonSell
+            // 
+            this.buttonSell.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonSell.FlatAppearance.BorderSize = 0;
+            this.buttonSell.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSell.Font = new System.Drawing.Font("Kanit", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSell.ForeColor = System.Drawing.Color.White;
+            this.buttonSell.IconChar = FontAwesome.Sharp.IconChar.CartPlus;
+            this.buttonSell.IconColor = System.Drawing.Color.White;
+            this.buttonSell.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.buttonSell.Location = new System.Drawing.Point(0, 230);
+            this.buttonSell.Name = "buttonSell";
+            this.buttonSell.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.buttonSell.Size = new System.Drawing.Size(144, 115);
+            this.buttonSell.TabIndex = 5;
+            this.buttonSell.Text = "ขายสินค้า";
+            this.buttonSell.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.buttonSell.UseVisualStyleBackColor = true;
+            this.buttonSell.Click += new System.EventHandler(this.buttonSell_Click);
             // 
             // buttonCustomer
             // 
@@ -271,5 +293,6 @@
         private FontAwesome.Sharp.IconButton logoutButton;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2Panel container;
+        private FontAwesome.Sharp.IconButton buttonSell;
     }
 }

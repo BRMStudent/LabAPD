@@ -23,7 +23,8 @@ namespace ProjectAPD
         public int Id { get; set; }
         public System.DateTime Date { get; set; }
         public System.TimeSpan Time { get; set; }
-        public Nullable<int> CustomerId { get; set; }
+        public int CustomerId { get; set; }
+        public Nullable<int> TotalPrice { get; set; }
     
         public virtual Customerx Customerx { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

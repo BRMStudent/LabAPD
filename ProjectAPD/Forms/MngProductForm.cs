@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace ProjectAPD.Forms {
     public partial class MngProductForm : Form {
-        ProjectEntities context = new ProjectEntities();
+        ProjectEntities1 context = new ProjectEntities1();
         List<string> typeNames = new List<string> {
             "ทั้งหมด",
             "ซีพียู คอมพิวเตอร์",
@@ -55,7 +55,7 @@ namespace ProjectAPD.Forms {
         }
 
         private void comboBoxType_SelectedIndexChanged(object sender, EventArgs e) {
-            textBoxSearch.Text = String.Empty;
+            textBoxSearch.Text = string.Empty;
             typeid = ((ComboboxItem)(comboBoxType.SelectedItem)).Value;
             if (!typeid.Equals("0")) {
                 productxBindingSource.DataSource = context.Productxes.Where(p => p.TypeId.ToString() == typeid).ToList();
@@ -108,7 +108,7 @@ namespace ProjectAPD.Forms {
                 HtmlNode priceNode = doc.DocumentNode
                     .SelectSingleNode("//div[@class=" +
                    "\"col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center price_block\"]");
-                String price = priceNode.InnerText;
+                string price = priceNode.InnerText;
                 price = new string(price.Where(c => char.IsDigit(c)).ToArray());
                 productPrice = int.Parse(price);
 
@@ -137,11 +137,11 @@ namespace ProjectAPD.Forms {
                     context.Productxes.Add(product);
                     change = await context.SaveChangesAsync();
                     textBoxAddProduct.Text = string.Empty;
-                    textBoxSearch.Text = String.Empty;
+                    textBoxSearch.Text = string.Empty;
                 }
                 MessageBox.Show("สินค้าถูกเพิ่ม " + change + " รายการ");
             } catch(Exception ex){
-                textBoxSearch.Text = String.Empty;
+                textBoxSearch.Text = string.Empty;
                 Console.WriteLine(ex.StackTrace);
                 MessageBox.Show("สินค้าหมด");
             }

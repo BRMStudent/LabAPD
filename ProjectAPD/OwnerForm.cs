@@ -38,6 +38,9 @@ namespace ProjectAPD {
             selectedPanel.Size = new Size(7, productsButton.Size.Height);
             menuPanel.Controls.Add(selectedPanel);
             selectedPanel.BackColor = Color.White;
+
+            SelectedButton(productsButton);
+            OpenChildForm(new ProductsForm());
         }
 
         private void OpenChildForm(Form childForm) {

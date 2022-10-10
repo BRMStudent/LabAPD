@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace ProjectAPD.Forms {
     public partial class ProductsForm : Form {
-        ProjectEntities context = new ProjectEntities();
+        ProjectEntities1 context = new ProjectEntities1();
 
         List<string> typeNames = new List<string> {
             "ทั้งหมด",

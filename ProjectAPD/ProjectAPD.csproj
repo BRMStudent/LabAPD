@@ -33,6 +33,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.2.2.5\lib\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Controls, Version=2.2.5.0, Culture=neutral, PublicKeyToken=a8ac264d1dc6b9d9, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Controls.2.2.5\lib\AForge.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Imaging, Version=2.2.5.0, Culture=neutral, PublicKeyToken=ba8ddea9676ca48b, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Imaging.2.2.5\lib\AForge.Imaging.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Math, Version=2.2.5.0, Culture=neutral, PublicKeyToken=abba2e25397ee8c9, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Math.2.2.5\lib\AForge.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.2.2.5\lib\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -66,28 +84,34 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
+    <Reference Include="zxing, Version=0.16.8.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.8\lib\net47\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.8.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.8\lib\net47\zxing.presentation.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Billx.cs">
-      <DependentUpon>ProjectModel.tt</DependentUpon>
+      <DependentUpon>ProjectsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ComboboxItem.cs" />
     <Compile Include="Customerx.cs">
-      <DependentUpon>ProjectModel.tt</DependentUpon>
+      <DependentUpon>ProjectsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Employeex.cs">
-      <DependentUpon>ProjectModel.tt</DependentUpon>
+      <DependentUpon>ProjectsModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Forms\CRUD\ManageCustomerForm.cs">
+    <Compile Include="Forms\dialog\ManageCustomerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\CRUD\ManageCustomerForm.Designer.cs">
+    <Compile Include="Forms\dialog\ManageCustomerForm.Designer.cs">
       <DependentUpon>ManageCustomerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\CRUD\ManageEmpForm.cs">
+    <Compile Include="Forms\dialog\ManageEmpForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\CRUD\ManageEmpForm.Designer.cs">
+    <Compile Include="Forms\dialog\ManageEmpForm.Designer.cs">
       <DependentUpon>ManageEmpForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\CustomerForm.cs">
@@ -95,6 +119,12 @@
     </Compile>
     <Compile Include="Forms\CustomerForm.Designer.cs">
       <DependentUpon>CustomerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\dialog\ScanCamForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\dialog\ScanCamForm.Designer.cs">
+      <DependentUpon>ScanCamForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\EmployeeForm.cs">
       <SubType>Form</SubType>
@@ -108,10 +138,10 @@
     <Compile Include="Forms\MngProductForm.Designer.cs">
       <DependentUpon>MngProductForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ProductDetailForm.cs">
+    <Compile Include="Forms\dialog\ProductDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ProductDetailForm.Designer.cs">
+    <Compile Include="Forms\dialog\ProductDetailForm.Designer.cs">
       <DependentUpon>ProductDetailForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ProductsForm.cs">
@@ -120,8 +150,14 @@
     <Compile Include="Forms\ProductsForm.Designer.cs">
       <DependentUpon>ProductsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\SellForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SellForm.Designer.cs">
+      <DependentUpon>SellForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Itemx.cs">
-      <DependentUpon>ProjectModel.tt</DependentUpon>
+      <DependentUpon>ProjectsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -142,23 +178,23 @@
       <DependentUpon>OwnerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Productx.cs">
-      <DependentUpon>ProjectModel.tt</DependentUpon>
+      <DependentUpon>ProjectsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
-    <Compile Include="ProjectModel.Context.cs">
+    <Compile Include="ProjectsModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ProjectModel.Context.tt</DependentUpon>
+      <DependentUpon>ProjectsModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="ProjectModel.cs">
+    <Compile Include="ProjectsModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ProjectModel.tt</DependentUpon>
+      <DependentUpon>ProjectsModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="ProjectModel.Designer.cs">
+    <Compile Include="ProjectsModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ProjectModel.edmx</DependentUpon>
+      <DependentUpon>ProjectsModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SalemanForm.cs">
@@ -168,16 +204,19 @@
       <DependentUpon>SalemanForm.cs</DependentUpon>
     </Compile>
     <Compile Include="TypeProductx.cs">
-      <DependentUpon>ProjectModel.tt</DependentUpon>
+      <DependentUpon>ProjectsModel.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Forms\CRUD\ManageCustomerForm.resx">
+    <EmbeddedResource Include="Forms\dialog\ManageCustomerForm.resx">
       <DependentUpon>ManageCustomerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\CRUD\ManageEmpForm.resx">
+    <EmbeddedResource Include="Forms\dialog\ManageEmpForm.resx">
       <DependentUpon>ManageEmpForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CustomerForm.resx">
       <DependentUpon>CustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\dialog\ScanCamForm.resx">
+      <DependentUpon>ScanCamForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EmployeeForm.resx">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
@@ -185,11 +224,14 @@
     <EmbeddedResource Include="Forms\MngProductForm.resx">
       <DependentUpon>MngProductForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ProductDetailForm.resx">
+    <EmbeddedResource Include="Forms\dialog\ProductDetailForm.resx">
       <DependentUpon>ProductDetailForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProductsForm.resx">
       <DependentUpon>ProductsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SellForm.resx">
+      <DependentUpon>SellForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -214,12 +256,12 @@
       <DependentUpon>SalemanForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
-    <EntityDeploy Include="ProjectModel.edmx">
+    <EntityDeploy Include="ProjectsModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ProjectModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>ProjectsModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="ProjectModel.edmx.diagram">
-      <DependentUpon>ProjectModel.edmx</DependentUpon>
+    <None Include="ProjectsModel.edmx.diagram">
+      <DependentUpon>ProjectsModel.edmx</DependentUpon>
     </None>
     <None Include="Properties\DataSources\Customerx.datasource" />
     <None Include="Properties\DataSources\Employeex.datasource" />
@@ -244,21 +286,23 @@
     <None Include="Resources\user.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ProjectModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ProjectModel.Context.cs</LastGenOutput>
-      <DependentUpon>ProjectModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="ProjectModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ProjectModel.edmx</DependentUpon>
-      <LastGenOutput>ProjectModel.cs</LastGenOutput>
-    </Content>
     <None Include="Resources\search1.png" />
     <None Include="Resources\search.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ProjectsModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ProjectsModel.edmx</DependentUpon>
+      <LastGenOutput>ProjectsModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ProjectsModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ProjectsModel.edmx</DependentUpon>
+      <LastGenOutput>ProjectsModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

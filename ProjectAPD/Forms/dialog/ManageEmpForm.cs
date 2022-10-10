@@ -13,7 +13,7 @@ using System.Windows.Forms;
 namespace ProjectAPD.Forms.CRUD {
     public partial class ManageEmpForm : Form {
 
-        ProjectEntities context = new ProjectEntities();
+        ProjectEntities1 context = new ProjectEntities1();
         BindingSource empBindingSource;
         string title;
         int empId;

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace ProjectAPD.Forms.CRUD {
     public partial class ManageCustomerForm : Form {
-        ProjectEntities context = new ProjectEntities();
+        ProjectEntities1 context = new ProjectEntities1();
         BindingSource customerBindingSource;
         string title;
         int cusId;

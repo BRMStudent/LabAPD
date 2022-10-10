@@ -13,10 +13,10 @@ namespace ProjectAPD
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ProjectEntities : DbContext
+    public partial class ProjectEntities1 : DbContext
     {
-        public ProjectEntities()
-            : base("name=ProjectEntities")
+        public ProjectEntities1()
+            : base("name=ProjectEntities1")
         {
         }
     

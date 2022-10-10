@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="ProjectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="ProjectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Billx">
           <Key>
             <PropertyRef Name="Id" />
@@ -12,7 +12,8 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Date" Type="date" Nullable="false" />
           <Property Name="Time" Type="time" Precision="7" Nullable="false" />
-          <Property Name="CustomerId" Type="int" />
+          <Property Name="CustomerId" Type="int" Nullable="false" />
+          <Property Name="TotalPrice" Type="int" />
         </EntityType>
         <EntityType Name="Customerx">
           <Key>
@@ -64,7 +65,7 @@
           <Property Name="TypeName" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <Association Name="FK_Billx_Customerx">
-          <End Role="Customerx" Type="Self.Customerx" Multiplicity="0..1">
+          <End Role="Customerx" Type="Self.Customerx" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
           <End Role="Billx" Type="Self.Billx" Multiplicity="*" />
@@ -141,7 +142,8 @@
             <End Role="Productx" EntitySet="Productx" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ProjectModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -152,7 +154,8 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Time" Type="Time" Nullable="false" Precision="7" />
-          <Property Name="CustomerId" Type="Int32" />
+          <Property Name="CustomerId" Type="Int32" Nullable="false" />
+          <Property Name="TotalPrice" Type="Int32" />
           <NavigationProperty Name="Customerx" Relationship="Self.FK_Billx_Customerx" FromRole="Billx" ToRole="Customerx" />
           <NavigationProperty Name="Itemxes" Relationship="Self.FK_Itemx_Billx" FromRole="Billx" ToRole="Itemx" />
         </EntityType>
@@ -212,7 +215,7 @@
           <NavigationProperty Name="Productxes" Relationship="Self.FK_Productx_TypeProductx" FromRole="TypeProductx" ToRole="Productx" />
         </EntityType>
         <Association Name="FK_Billx_Customerx">
-          <End Role="Customerx" Type="Self.Customerx" Multiplicity="0..1">
+          <End Role="Customerx" Type="Self.Customerx" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
           <End Role="Billx" Type="Self.Billx" Multiplicity="*" />
@@ -265,7 +268,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ProjectEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="ProjectEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Billxes" EntityType="Self.Billx" />
           <EntitySet Name="Customerxes" EntityType="Self.Customerx" />
           <EntitySet Name="Employeexes" EntityType="Self.Employeex" />
@@ -294,7 +297,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ProjectModelStoreContainer" CdmEntityContainer="ProjectEntities">
+        <EntityContainerMapping StorageEntityContainer="ProjectModelStoreContainer" CdmEntityContainer="ProjectEntities1">
           <EntitySetMapping Name="Billxes">
             <EntityTypeMapping TypeName="ProjectModel.Billx">
               <MappingFragment StoreEntitySet="Billx">
@@ -302,6 +305,7 @@
                 <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="Time" ColumnName="Time" />
                 <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -318,13 +322,13 @@
           <EntitySetMapping Name="Employeexes">
             <EntityTypeMapping TypeName="ProjectModel.Employeex">
               <MappingFragment StoreEntitySet="Employeex">
-                <ScalarProperty Name="Image" ColumnName="Image" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
                 <ScalarProperty Name="Username" ColumnName="Username" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -33,23 +33,23 @@
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.dataGridViewProduct = new Guna.UI2.WinForms.Guna2DataGridView();
             this.ProductId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productxBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.textBoxSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.comboBoxType = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
             this.textBoxPrice = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.pictureBoxProduct = new Guna.UI2.WinForms.Guna2PictureBox();
             this.textBoxProductDescription = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxProductName = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxProductId = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBoxSearch = new Guna.UI2.WinForms.Guna2TextBox();
-            this.pictureBoxProduct = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unitPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productxBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -58,11 +58,11 @@
             this.guna2Panel4.SuspendLayout();
             this.guna2Panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduct)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productxBindingSource)).BeginInit();
             this.guna2Panel3.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProduct)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productxBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -193,6 +193,29 @@
             this.ProductId.ReadOnly = true;
             this.ProductId.Width = 117;
             // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "ชื่อสินค้า";
+            this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // unitPriceDataGridViewTextBoxColumn
+            // 
+            this.unitPriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.unitPriceDataGridViewTextBoxColumn.DataPropertyName = "UnitPrice";
+            this.unitPriceDataGridViewTextBoxColumn.HeaderText = "ราคา";
+            this.unitPriceDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.unitPriceDataGridViewTextBoxColumn.Name = "unitPriceDataGridViewTextBoxColumn";
+            this.unitPriceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.unitPriceDataGridViewTextBoxColumn.Width = 79;
+            // 
+            // productxBindingSource
+            // 
+            this.productxBindingSource.DataSource = typeof(ProjectAPD.Productx);
+            // 
             // guna2Panel3
             // 
             this.guna2Panel3.Controls.Add(this.textBoxSearch);
@@ -202,6 +225,33 @@
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(849, 86);
             this.guna2Panel3.TabIndex = 0;
+            // 
+            // textBoxSearch
+            // 
+            this.textBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxSearch.BorderRadius = 15;
+            this.textBoxSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBoxSearch.DefaultText = "";
+            this.textBoxSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.textBoxSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.textBoxSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBoxSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBoxSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBoxSearch.Font = new System.Drawing.Font("Kanit Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBoxSearch.IconRight = global::ProjectAPD.Properties.Resources.search;
+            this.textBoxSearch.IconRightOffset = new System.Drawing.Point(10, 0);
+            this.textBoxSearch.Location = new System.Drawing.Point(23, 22);
+            this.textBoxSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxSearch.Name = "textBoxSearch";
+            this.textBoxSearch.PasswordChar = '\0';
+            this.textBoxSearch.PlaceholderText = "ค้นหาจากชื่อ";
+            this.textBoxSearch.SelectedText = "";
+            this.textBoxSearch.Size = new System.Drawing.Size(371, 45);
+            this.textBoxSearch.TabIndex = 2;
+            this.textBoxSearch.TextOffset = new System.Drawing.Point(10, 0);
+            this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
             // 
             // comboBoxType
             // 
@@ -281,6 +331,20 @@
             this.label4.Size = new System.Drawing.Size(45, 27);
             this.label4.TabIndex = 8;
             this.label4.Text = "ราคา";
+            // 
+            // pictureBoxProduct
+            // 
+            this.pictureBoxProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBoxProduct.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxProduct.ImageRotate = 0F;
+            this.pictureBoxProduct.Location = new System.Drawing.Point(49, 446);
+            this.pictureBoxProduct.Name = "pictureBoxProduct";
+            this.pictureBoxProduct.Size = new System.Drawing.Size(250, 160);
+            this.pictureBoxProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxProduct.TabIndex = 6;
+            this.pictureBoxProduct.TabStop = false;
             // 
             // textBoxProductDescription
             // 
@@ -388,70 +452,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "รหัสสินค้า";
             // 
-            // textBoxSearch
-            // 
-            this.textBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxSearch.BorderRadius = 15;
-            this.textBoxSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBoxSearch.DefaultText = "";
-            this.textBoxSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.textBoxSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.textBoxSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.textBoxSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.textBoxSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBoxSearch.Font = new System.Drawing.Font("Kanit Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBoxSearch.IconRight = global::ProjectAPD.Properties.Resources.search;
-            this.textBoxSearch.IconRightOffset = new System.Drawing.Point(10, 0);
-            this.textBoxSearch.Location = new System.Drawing.Point(23, 22);
-            this.textBoxSearch.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.PasswordChar = '\0';
-            this.textBoxSearch.PlaceholderText = "ค้นหาจากชื่อ";
-            this.textBoxSearch.SelectedText = "";
-            this.textBoxSearch.Size = new System.Drawing.Size(371, 45);
-            this.textBoxSearch.TabIndex = 2;
-            this.textBoxSearch.TextOffset = new System.Drawing.Point(10, 0);
-            this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
-            // 
-            // pictureBoxProduct
-            // 
-            this.pictureBoxProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBoxProduct.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxProduct.ImageRotate = 0F;
-            this.pictureBoxProduct.Location = new System.Drawing.Point(49, 446);
-            this.pictureBoxProduct.Name = "pictureBoxProduct";
-            this.pictureBoxProduct.Size = new System.Drawing.Size(250, 160);
-            this.pictureBoxProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxProduct.TabIndex = 6;
-            this.pictureBoxProduct.TabStop = false;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "ชื่อสินค้า";
-            this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // unitPriceDataGridViewTextBoxColumn
-            // 
-            this.unitPriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.unitPriceDataGridViewTextBoxColumn.DataPropertyName = "UnitPrice";
-            this.unitPriceDataGridViewTextBoxColumn.HeaderText = "ราคา";
-            this.unitPriceDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.unitPriceDataGridViewTextBoxColumn.Name = "unitPriceDataGridViewTextBoxColumn";
-            this.unitPriceDataGridViewTextBoxColumn.ReadOnly = true;
-            this.unitPriceDataGridViewTextBoxColumn.Width = 79;
-            // 
-            // productxBindingSource
-            // 
-            this.productxBindingSource.DataSource = typeof(ProjectAPD.Productx);
-            // 
             // ProductsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -469,12 +469,12 @@
             this.guna2Panel4.ResumeLayout(false);
             this.guna2Panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduct)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productxBindingSource)).EndInit();
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel8.ResumeLayout(false);
             this.guna2Panel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProduct)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productxBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
