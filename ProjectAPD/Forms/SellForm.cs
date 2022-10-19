@@ -19,7 +19,6 @@ namespace ProjectAPD.Forms {
 
         int totalPrice;
 
-        
         public SellForm() {
             InitializeComponent();
             totalPrice = 0;
@@ -72,8 +71,8 @@ namespace ProjectAPD.Forms {
         }
 
         private void buttonScanQRCode_Click_1(object sender, EventArgs e) {
-            ScanCamForm scanCam = new ScanCamForm(productxBindingSource, productList, labelTotalPrice);
-            scanCam.ShowDialog();
+            ScanCamForm scanCam = new ScanCamForm(productxBindingSource, productList, labelTotalPrice, this);
+            scanCam.Show();
         }
 
         private void buttonRemoveItem_Click_1(object sender, EventArgs e) {
@@ -142,11 +141,11 @@ namespace ProjectAPD.Forms {
                             context.SaveChanges();
                         }
                         ClearAll();
+                        MessageBox.Show("บันทึกสำเร็จ");
                     } else {
                         ClearAll();
                         MessageBox.Show("ไม่มีรายการสินค้า");
                     }
-
                 } else {
                     MessageBox.Show("กรอกข้อมูลให้ครับถ้วน");
                 }

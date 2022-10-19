@@ -16,6 +16,7 @@ namespace ProjectAPD.Forms.CRUD {
         int cusId;
         public ManageCustomerForm(string title, BindingSource customerBindingSource) {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Text = title;

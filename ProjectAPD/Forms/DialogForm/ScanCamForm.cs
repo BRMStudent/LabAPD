@@ -23,14 +23,15 @@ namespace ProjectAPD.Forms.dialog {
         BindingSource bindingSource;
         List<Productx> productList;
         Label lblTotalPrice;
+        Form sellForm;
 
-        
 
-        public ScanCamForm(BindingSource bindingSource, List<Productx> productList, Label label) {
+
+
+        public ScanCamForm(BindingSource bindingSource, List<Productx> productList, Label label, Form sellForm) {
             InitializeComponent();
-            this.MinimizeBox = false;
             this.MaximizeBox = false;
-
+            this.sellForm = sellForm;
             this.bindingSource = bindingSource;
             this.productList = productList;
             this.lblTotalPrice = label;
@@ -40,7 +41,7 @@ namespace ProjectAPD.Forms.dialog {
             foreach (FilterInfo webcam in webcams) {
                 comboBoxWebCams.Items.Add(webcam.Name);
             }
-            comboBoxWebCams.SelectedIndex = 3;
+            comboBoxWebCams.SelectedIndex = 1;
         }
 
         private void comboBoxWebCams_SelectedIndexChanged(object sender, EventArgs e) {
@@ -78,14 +79,19 @@ namespace ProjectAPD.Forms.dialog {
                         }
                         lblTotalPrice.Text = total.ToString();
                         bindingSource.DataSource = context.Productxes.Where(p => p.ProductId.Equals(productId)).ToList();
-                        this.Close();
+                        bindingSource.DataSource = productList;
+                        /*this.Close();*/
                     } catch (Exception ex){
                         this.Close();
-                        MessageBox.Show("ไม่พบสินค้า");
+                        MessageBox.Show(sellForm, "ไม่พบสินค้า");
                         Console.WriteLine(ex.Message);
                     }
                 }
             }
+        }
+
+        private void ScanCamForm_Deactivate(object sender, EventArgs e) {
+            this.Close();
         }
     }
 }

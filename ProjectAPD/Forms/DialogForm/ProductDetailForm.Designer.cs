@@ -213,6 +213,7 @@
             this.Name = "ProductDetailForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProductDetailForm";
+            this.Deactivate += new System.EventHandler(this.ProductDetailForm_Deactivate);
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();

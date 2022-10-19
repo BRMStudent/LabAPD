@@ -33,5 +33,9 @@ namespace ProjectAPD.Forms {
             streamResponse.Dispose();
             return bmp;
         }
+
+        private void ProductDetailForm_Deactivate(object sender, EventArgs e) {
+            this.Close();
+        }
     }
 }

@@ -76,7 +76,7 @@ namespace ProjectAPD.Forms {
                 product.Description, 
                 product.Image
             );
-            productDetail.ShowDialog();
+            productDetail.Show();
 
         }
 

@@ -54,24 +54,29 @@ namespace ProjectAPD.Forms {
         }
 
         private void comboBoxType_SelectedIndexChanged(object sender, EventArgs e) {
+            textBoxSearch.Text = String.Empty;
+            textBoxSearch.Focus();
             string typeid = ((ComboboxItem)(comboBoxType.SelectedItem)).Value;
+
             if (!typeid.Equals("0")) {
                 productxBindingSource.DataSource = context.Productxes.Where(p => p.TypeId.ToString() == typeid).ToList();
             } else {
                 productxBindingSource.DataSource = context.Productxes.ToList();
             }
+
+
+            try {
+                dataGridViewProduct.SelectedRows[0].Selected = true;
+                string id = dataGridViewProduct.SelectedRows[0].Cells[0].Value.ToString();
+                ShowDetail(id);
+            } catch { }
+            
         }
 
         private void dataGridViewProduct_CellClick(object sender, DataGridViewCellEventArgs e) {
+            textBoxSearch.Focus();
             string id = dataGridViewProduct.SelectedRows[0].Cells[0].Value.ToString();
-
-            Productx product = context.Productxes.Where((c) => c.ProductId.ToString() == id).First();
-
-            textBoxProductId.Text = product.ProductId.ToString();
-            textBoxProductName.Text = product.Name;
-            textBoxProductDescription.Text = product.Description;
-            textBoxPrice.Text = product.UnitPrice.ToString();
-            pictureBoxProduct.Image = LoadImage(product.Image);
+            ShowDetail(id);
         }
         private Image LoadImage(string url) {
             HttpWebRequest myHttpWebRequest = (HttpWebRequest)WebRequest.Create(url);
@@ -86,6 +91,27 @@ namespace ProjectAPD.Forms {
         private void textBoxSearch_TextChanged(object sender, EventArgs e) {
             comboBoxType.SelectedIndex = 0;
             productxBindingSource.DataSource = context.Productxes.Where(p => p.Name.Contains(textBoxSearch.Text) || p.ProductId.ToString().Contains(textBoxSearch.Text)).ToList();
+
+            try {
+                string id = dataGridViewProduct.SelectedRows[0].Cells[0].Value.ToString();
+                ShowDetail(id);
+            } catch { }
+        }
+
+        private void ProductsForm_Load(object sender, EventArgs e) {
+            textBoxSearch.Focus();
+            string id = dataGridViewProduct.SelectedRows[0].Cells[0].Value.ToString();
+            ShowDetail(id);
+        }
+
+        private void ShowDetail(string id) {
+            Productx product = context.Productxes.Where((c) => c.ProductId.ToString() == id).First();
+
+            textBoxProductId.Text = product.ProductId.ToString();
+            textBoxProductName.Text = product.Name;
+            textBoxProductDescription.Text = product.Description;
+            textBoxPrice.Text = product.UnitPrice.ToString();
+            pictureBoxProduct.Image = LoadImage(product.Image);
         }
     }
 }
