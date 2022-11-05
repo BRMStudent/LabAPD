@@ -38,6 +38,7 @@
             this.logoutButton = new FontAwesome.Sharp.IconButton();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.container = new Guna.UI2.WinForms.Guna2Panel();
+            this.buttonMngComboSet = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).BeginInit();
             this.titleBar.SuspendLayout();
             this.menuPanel.SuspendLayout();
@@ -147,6 +148,7 @@
             // menuPanel
             // 
             this.menuPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(211)))));
+            this.menuPanel.Controls.Add(this.buttonMngComboSet);
             this.menuPanel.Controls.Add(this.buttonSell);
             this.menuPanel.Controls.Add(this.buttonCustomer);
             this.menuPanel.Controls.Add(this.productsButton);
@@ -255,6 +257,26 @@
             this.container.Size = new System.Drawing.Size(1216, 658);
             this.container.TabIndex = 9;
             // 
+            // buttonMngComboSet
+            // 
+            this.buttonMngComboSet.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonMngComboSet.FlatAppearance.BorderSize = 0;
+            this.buttonMngComboSet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMngComboSet.Font = new System.Drawing.Font("Kanit", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonMngComboSet.ForeColor = System.Drawing.Color.White;
+            this.buttonMngComboSet.IconChar = FontAwesome.Sharp.IconChar.Star;
+            this.buttonMngComboSet.IconColor = System.Drawing.Color.White;
+            this.buttonMngComboSet.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.buttonMngComboSet.Location = new System.Drawing.Point(0, 345);
+            this.buttonMngComboSet.Name = "buttonMngComboSet";
+            this.buttonMngComboSet.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.buttonMngComboSet.Size = new System.Drawing.Size(144, 115);
+            this.buttonMngComboSet.TabIndex = 6;
+            this.buttonMngComboSet.Text = "จัดชุดอุปกรณ์";
+            this.buttonMngComboSet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.buttonMngComboSet.UseVisualStyleBackColor = true;
+            this.buttonMngComboSet.Click += new System.EventHandler(this.buttonMngComboSet_Click);
+            // 
             // SalemanForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -294,5 +316,6 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2Panel container;
         private FontAwesome.Sharp.IconButton buttonSell;
+        private FontAwesome.Sharp.IconButton buttonMngComboSet;
     }
 }

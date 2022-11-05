@@ -81,17 +81,13 @@ namespace ProjectAPD.Forms.dialog {
                         bindingSource.DataSource = context.Productxes.Where(p => p.ProductId.Equals(productId)).ToList();
                         bindingSource.DataSource = productList;
                         /*this.Close();*/
-                    } catch (Exception ex){
+                    } catch (Exception ex) {
                         this.Close();
                         MessageBox.Show(sellForm, "ไม่พบสินค้า");
                         Console.WriteLine(ex.Message);
                     }
                 }
             }
-        }
-
-        private void ScanCamForm_Deactivate(object sender, EventArgs e) {
-            this.Close();
         }
     }
 }

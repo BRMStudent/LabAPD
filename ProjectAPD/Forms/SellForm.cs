@@ -16,7 +16,7 @@ namespace ProjectAPD.Forms {
 
         ProjectEntities1 context = new ProjectEntities1();
         List<Productx> productList = new List<Productx>();
-
+        
         int totalPrice;
 
         public SellForm() {
@@ -71,8 +71,20 @@ namespace ProjectAPD.Forms {
         }
 
         private void buttonScanQRCode_Click_1(object sender, EventArgs e) {
-            ScanCamForm scanCam = new ScanCamForm(productxBindingSource, productList, labelTotalPrice, this);
-            scanCam.Show();
+
+            FormCollection fc = Application.OpenForms;
+            bool camOpening = false;
+            foreach (Form frm in fc) {
+                if (frm.Name == "ScanCamForm") {
+                    camOpening = true;
+                    frm.Close();
+                    break;
+                }
+            }
+            if (camOpening == false) {
+                ScanCamForm scanCam = new ScanCamForm(productxBindingSource, productList, labelTotalPrice, this);
+                scanCam.Show();
+            }
         }
 
         private void buttonRemoveItem_Click_1(object sender, EventArgs e) {
@@ -91,7 +103,6 @@ namespace ProjectAPD.Forms {
                 productxBindingSource.DataSource = productList;
 
                 clearDescription();
-
 
             } catch { }
         }
