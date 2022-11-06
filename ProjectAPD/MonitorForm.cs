@@ -34,12 +34,12 @@ namespace ProjectAPD {
             }
             //btn
             selectedPanel = new Guna2Panel();
-            selectedPanel.Size = new Size(7, mngProductsButton.Size.Height);
+            selectedPanel.Size = new Size(7, productsButton.Size.Height);
             menuPanel.Controls.Add(selectedPanel);
             selectedPanel.BackColor = Color.White;
 
-            SelectedButton(mngProductsButton);
-            OpenChildForm(new MngProductForm());
+            SelectedButton(productsButton);
+            OpenChildForm(new ProductsForm());
         }
         private void OpenChildForm(Form childForm) {
             if (currentChildForm != null) {
@@ -91,11 +91,22 @@ namespace ProjectAPD {
             loginForm.Visible = true;
             this.Close();
         }
-        
-        private void mngProductsButton_Click(object sender, EventArgs e) {
+
+        private void productsButton_Click(object sender, EventArgs e) {
+            SelectedButton(sender);
+            OpenChildForm(new ProductsForm());
+        }
+
+        private void mngProductsButton_Click_1(object sender, EventArgs e) {
             SelectedButton(sender);
             OpenChildForm(new MngProductForm());
         }
+
+        private void buttonMngComboSet_Click_1(object sender, EventArgs e) {
+            SelectedButton(sender);
+            OpenChildForm(new MngComboForm());
+        }
+
         private Image LoadImage(string url) {
             HttpWebRequest myHttpWebRequest = (HttpWebRequest)WebRequest.Create(url);
             myHttpWebRequest.UserAgent = "Chrome/105.0.0.0";
@@ -105,5 +116,11 @@ namespace ProjectAPD {
             streamResponse.Dispose();
             return bmp;
         }
+
+        private void buttonMngComboSet_Click(object sender, EventArgs e) {
+
+        }
+
+        
     }
 }

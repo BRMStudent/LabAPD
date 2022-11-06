@@ -78,8 +78,7 @@ namespace ProjectAPD.Forms.dialog {
                             total += p.UnitPrice;
                         }
                         lblTotalPrice.Text = total.ToString();
-                        bindingSource.DataSource = context.Productxes.Where(p => p.ProductId.Equals(productId)).ToList();
-                        bindingSource.DataSource = productList;
+                        bindingSource.DataSource = new List<Productx>(productList);
                         /*this.Close();*/
                     } catch (Exception ex) {
                         this.Close();

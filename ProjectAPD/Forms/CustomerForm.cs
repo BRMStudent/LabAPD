@@ -33,8 +33,6 @@ namespace ProjectAPD.Forms {
             } catch (Exception exp) {
                 Console.WriteLine(exp.Message);
             }
-
-
         }
 
         private async void buttonDelete_Click(object sender, EventArgs e) {

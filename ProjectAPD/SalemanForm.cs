@@ -113,6 +113,11 @@ namespace ProjectAPD {
             OpenChildForm(new MngComboForm());
         }
 
+        private void buttonBill_Click(object sender, EventArgs e) {
+            SelectedButton(sender);
+            OpenChildForm(new BillForm());
+        }
+
         private Image LoadImage(string url) {
             HttpWebRequest myHttpWebRequest = (HttpWebRequest)WebRequest.Create(url);
             myHttpWebRequest.UserAgent = "Chrome/105.0.0.0";
@@ -123,5 +128,6 @@ namespace ProjectAPD {
             return bmp;
         }
 
+        
     }
 }

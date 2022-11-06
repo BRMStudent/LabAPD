@@ -23,32 +23,13 @@ namespace ProjectAPD.Forms {
             InitializeComponent();
             totalPrice = 0;
             productxBindingSource.DataSource = productList;
+            comboSetBindingSource.DataSource = context.ComboSets.ToList();
         }
 
         private void buttonCustomerReset_Click(object sender, EventArgs e) {
             textCustomerFirstName.Text = string.Empty;
             textCustomerLastName.Text = string.Empty;
             textCustomerPhone.Text = string.Empty;
-        }
-
-        private void dataGridViewProduct_CellClick(object sender, DataGridViewCellEventArgs e) {
-            string id = dataGridViewProduct.SelectedRows[0].Cells[0].Value.ToString();
-            var product = context.Productxes.Where(p => p.ProductId.ToString().Equals(id)).First();
-            textBoxProductId.Text = product.ProductId.ToString();
-            textBoxProductName.Text = product.Name;
-            textBoxProductDescription.Text = product.Description;
-            textBoxPrice.Text = product.UnitPrice.ToString();
-            pictureBoxProduct.Image = LoadImage(product.Image);
-        }
-
-        private Image LoadImage(string url) {
-            HttpWebRequest myHttpWebRequest = (HttpWebRequest)WebRequest.Create(url);
-            myHttpWebRequest.UserAgent = "Chrome/105.0.0.0";
-            HttpWebResponse myHttpWebResponse = (HttpWebResponse)myHttpWebRequest.GetResponse();
-            Stream streamResponse = myHttpWebResponse.GetResponseStream();
-            Bitmap bmp = new Bitmap(streamResponse);
-            streamResponse.Dispose();
-            return bmp;
         }
 
         private void ClearAll() {
@@ -59,15 +40,6 @@ namespace ProjectAPD.Forms {
             textCustomerFirstName.Text = string.Empty;
             textCustomerLastName.Text = string.Empty;
             textCustomerPhone.Text = string.Empty;
-            clearDescription();
-        }
-
-        private void clearDescription() {
-            textBoxProductId.Text = string.Empty;
-            textBoxProductName.Text = string.Empty;
-            textBoxProductDescription.Text = string.Empty;
-            textBoxPrice.Text = string.Empty;
-            pictureBoxProduct.Image = null;
         }
 
         private void buttonScanQRCode_Click_1(object sender, EventArgs e) {
@@ -87,22 +59,30 @@ namespace ProjectAPD.Forms {
             }
         }
 
+        bool c = false;
         private void buttonRemoveItem_Click_1(object sender, EventArgs e) {
             try {
-                int id = int.Parse(dataGridViewProduct.SelectedRows[0].Cells[0].Value.ToString());
 
                 foreach (DataGridViewRow item in dataGridViewProduct.SelectedRows) {
                     dataGridViewProduct.Rows.RemoveAt(item.Index);
                 }
-                int newTotal = 0;
-                foreach (Productx p in productList) {
-                    newTotal += p.UnitPrice;
-                }
-                totalPrice = newTotal;
-                labelTotalPrice.Text = totalPrice.ToString();
-                productxBindingSource.DataSource = productList;
 
-                clearDescription();
+                foreach (var p in productList) {
+                    Console.WriteLine(p.Name);
+                }
+
+                if (c) {
+                    int newTotal = 0;
+                    foreach (Productx p in productList) {
+                        newTotal += p.UnitPrice;
+                    }
+                    totalPrice = newTotal;
+                    labelTotalPrice.Text = totalPrice.ToString();
+                }
+                productxBindingSource.DataSource = productList;
+                c = true;
+
+                dataGridViewProduct.Rows[0].Selected = true;
 
             } catch { }
         }
@@ -112,7 +92,6 @@ namespace ProjectAPD.Forms {
             totalPrice = 0;
             labelTotalPrice.Text = totalPrice.ToString();
             productxBindingSource.DataSource = null;
-            clearDescription();
         }
 
         private void buttonCheckout_Click_1(object sender, EventArgs e) {
@@ -166,5 +145,28 @@ namespace ProjectAPD.Forms {
                 Console.WriteLine(ex.StackTrace);
             }
         }
+
+        private void dataGridViewComboSet_CellDoubleClick(object sender, DataGridViewCellEventArgs e) {
+            int id = int.Parse(dataGridViewComboSet.SelectedRows[0].Cells[0].Value.ToString());
+            var set = context.ComboSets.Where(s => s.Id.Equals(id)).First();
+
+            var setItems = context.ComboSetItems.Where(si => si.ComboSetId.Equals(set.Id)).ToList();
+            
+            foreach (var si in setItems) {
+                var product = context.Productxes.Where(p => p.Id.Equals(si.ProductId)).First();
+                productList.Add(product);
+            }
+
+            totalPrice += set.SetPrice;
+            
+            labelTotalPrice.Text = totalPrice.ToString();
+            productxBindingSource.DataSource = new List<Productx>(productList);
+            foreach (var p in productList) { 
+                Console.WriteLine(p.Name);
+            }
+            Console.WriteLine("\n");
+            c = false;
+        }
+
     }
 }

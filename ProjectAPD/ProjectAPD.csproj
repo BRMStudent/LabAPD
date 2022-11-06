@@ -96,6 +96,12 @@
       <DependentUpon>ProjectsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ComboboxItem.cs" />
+    <Compile Include="ComboSet.cs">
+      <DependentUpon>ProjectsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ComboSetItem.cs">
+      <DependentUpon>ProjectsModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Customerx.cs">
       <DependentUpon>ProjectsModel.tt</DependentUpon>
     </Compile>
@@ -281,6 +287,8 @@
     <None Include="ProjectsModel.edmx.diagram">
       <DependentUpon>ProjectsModel.edmx</DependentUpon>
     </None>
+    <None Include="Properties\DataSources\Billx.datasource" />
+    <None Include="Properties\DataSources\ComboSet.datasource" />
     <None Include="Properties\DataSources\Customerx.datasource" />
     <None Include="Properties\DataSources\Employeex.datasource" />
     <None Include="Properties\DataSources\Productx.datasource" />

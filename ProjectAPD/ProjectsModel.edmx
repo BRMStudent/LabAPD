@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ProjectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ProjectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Billx">
           <Key>
             <PropertyRef Name="Id" />
@@ -14,6 +14,22 @@
           <Property Name="Time" Type="time" Precision="7" Nullable="false" />
           <Property Name="CustomerId" Type="int" Nullable="false" />
           <Property Name="TotalPrice" Type="int" />
+        </EntityType>
+        <EntityType Name="ComboSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="1000" Nullable="false" />
+          <Property Name="SetPrice" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ComboSetItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="ComboSetId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Customerx">
           <Key>
@@ -78,6 +94,34 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_ComboSetItem_ComboSet">
+          <End Role="ComboSet" Type="Self.ComboSet" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ComboSetItem" Type="Self.ComboSetItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ComboSet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ComboSetItem">
+              <PropertyRef Name="ComboSetId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ComboSetItem_Productx">
+          <End Role="Productx" Type="Self.Productx" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ComboSetItem" Type="Self.ComboSetItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Productx">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ComboSetItem">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Itemx_Billx">
           <End Role="Billx" Type="Self.Billx" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
@@ -120,6 +164,8 @@
         </Association>
         <EntityContainer Name="ProjectModelStoreContainer">
           <EntitySet Name="Billx" EntityType="Self.Billx" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ComboSet" EntityType="Self.ComboSet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ComboSetItem" EntityType="Self.ComboSetItem" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Customerx" EntityType="Self.Customerx" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Employeex" EntityType="Self.Employeex" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Itemx" EntityType="Self.Itemx" Schema="dbo" store:Type="Tables" />
@@ -128,6 +174,14 @@
           <AssociationSet Name="FK_Billx_Customerx" Association="Self.FK_Billx_Customerx">
             <End Role="Customerx" EntitySet="Customerx" />
             <End Role="Billx" EntitySet="Billx" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ComboSetItem_ComboSet" Association="Self.FK_ComboSetItem_ComboSet">
+            <End Role="ComboSet" EntitySet="ComboSet" />
+            <End Role="ComboSetItem" EntitySet="ComboSetItem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ComboSetItem_Productx" Association="Self.FK_ComboSetItem_Productx">
+            <End Role="Productx" EntitySet="Productx" />
+            <End Role="ComboSetItem" EntitySet="ComboSetItem" />
           </AssociationSet>
           <AssociationSet Name="FK_Itemx_Billx" Association="Self.FK_Itemx_Billx">
             <End Role="Billx" EntitySet="Billx" />
@@ -142,8 +196,7 @@
             <End Role="Productx" EntitySet="Productx" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ProjectModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -205,6 +258,7 @@
           <Property Name="ProductId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Itemxes" Relationship="Self.FK_Itemx_Productx" FromRole="Productx" ToRole="Itemx" />
           <NavigationProperty Name="TypeProductx" Relationship="Self.FK_Productx_TypeProductx" FromRole="Productx" ToRole="TypeProductx" />
+          <NavigationProperty Name="ComboSetItems" Relationship="ProjectModel.FK_ComboSetItem_Productx" FromRole="Productx" ToRole="ComboSetItem" />
         </EntityType>
         <EntityType Name="TypeProductx">
           <Key>
@@ -291,7 +345,62 @@
             <End Role="TypeProductx" EntitySet="TypeProductxes" />
             <End Role="Productx" EntitySet="Productxes" />
           </AssociationSet>
+          <EntitySet Name="ComboSets" EntityType="ProjectModel.ComboSet" />
+          <EntitySet Name="ComboSetItems" EntityType="ProjectModel.ComboSetItem" />
+          <AssociationSet Name="FK_ComboSetItem_ComboSet" Association="ProjectModel.FK_ComboSetItem_ComboSet">
+            <End Role="ComboSet" EntitySet="ComboSets" />
+            <End Role="ComboSetItem" EntitySet="ComboSetItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ComboSetItem_Productx" Association="ProjectModel.FK_ComboSetItem_Productx">
+            <End Role="Productx" EntitySet="Productxes" />
+            <End Role="ComboSetItem" EntitySet="ComboSetItems" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="ComboSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="SetPrice" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ComboSetItems" Relationship="ProjectModel.FK_ComboSetItem_ComboSet" FromRole="ComboSet" ToRole="ComboSetItem" />
+        </EntityType>
+        <EntityType Name="ComboSetItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <Property Name="ComboSetId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ComboSet" Relationship="ProjectModel.FK_ComboSetItem_ComboSet" FromRole="ComboSetItem" ToRole="ComboSet" />
+          <NavigationProperty Name="Productx" Relationship="ProjectModel.FK_ComboSetItem_Productx" FromRole="ComboSetItem" ToRole="Productx" />
+        </EntityType>
+        <Association Name="FK_ComboSetItem_ComboSet">
+          <End Type="ProjectModel.ComboSet" Role="ComboSet" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="ProjectModel.ComboSetItem" Role="ComboSetItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ComboSet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ComboSetItem">
+              <PropertyRef Name="ComboSetId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ComboSetItem_Productx">
+          <End Type="ProjectModel.Productx" Role="Productx" Multiplicity="1" />
+          <End Type="ProjectModel.ComboSetItem" Role="ComboSetItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Productx">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ComboSetItem">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -360,6 +469,24 @@
               <MappingFragment StoreEntitySet="TypeProductx">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ComboSets">
+            <EntityTypeMapping TypeName="ProjectModel.ComboSet">
+              <MappingFragment StoreEntitySet="ComboSet">
+                <ScalarProperty Name="SetPrice" ColumnName="SetPrice" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ComboSetItems">
+            <EntityTypeMapping TypeName="ProjectModel.ComboSetItem">
+              <MappingFragment StoreEntitySet="ComboSetItem">
+                <ScalarProperty Name="ComboSetId" ColumnName="ComboSetId" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

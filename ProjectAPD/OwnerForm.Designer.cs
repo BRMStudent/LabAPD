@@ -34,11 +34,11 @@
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.container = new Guna.UI2.WinForms.Guna2Panel();
-            this.logoutButton = new FontAwesome.Sharp.IconButton();
-            this.productsButton = new FontAwesome.Sharp.IconButton();
-            this.buttonEmployee = new FontAwesome.Sharp.IconButton();
-            this.buttonCustomer = new FontAwesome.Sharp.IconButton();
             this.menuPanel = new Guna.UI2.WinForms.Guna2Panel();
+            this.buttonCustomer = new FontAwesome.Sharp.IconButton();
+            this.buttonEmployee = new FontAwesome.Sharp.IconButton();
+            this.productsButton = new FontAwesome.Sharp.IconButton();
+            this.logoutButton = new FontAwesome.Sharp.IconButton();
             this.titleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).BeginInit();
             this.guna2Panel1.SuspendLayout();
@@ -173,66 +173,18 @@
             this.container.Size = new System.Drawing.Size(1216, 658);
             this.container.TabIndex = 1;
             // 
-            // logoutButton
+            // menuPanel
             // 
-            this.logoutButton.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.logoutButton.FlatAppearance.BorderSize = 0;
-            this.logoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.logoutButton.Font = new System.Drawing.Font("Kanit", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logoutButton.ForeColor = System.Drawing.Color.White;
-            this.logoutButton.IconChar = FontAwesome.Sharp.IconChar.SignOut;
-            this.logoutButton.IconColor = System.Drawing.Color.White;
-            this.logoutButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.logoutButton.IconSize = 40;
-            this.logoutButton.Location = new System.Drawing.Point(0, 543);
-            this.logoutButton.Name = "logoutButton";
-            this.logoutButton.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.logoutButton.Size = new System.Drawing.Size(144, 115);
-            this.logoutButton.TabIndex = 1;
-            this.logoutButton.Text = "ออกจากระบบ";
-            this.logoutButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.logoutButton.UseVisualStyleBackColor = true;
-            this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
-            // 
-            // productsButton
-            // 
-            this.productsButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.productsButton.FlatAppearance.BorderSize = 0;
-            this.productsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.productsButton.Font = new System.Drawing.Font("Kanit", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.productsButton.ForeColor = System.Drawing.Color.White;
-            this.productsButton.IconChar = FontAwesome.Sharp.IconChar.Tags;
-            this.productsButton.IconColor = System.Drawing.Color.White;
-            this.productsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.productsButton.Location = new System.Drawing.Point(0, 0);
-            this.productsButton.Name = "productsButton";
-            this.productsButton.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.productsButton.Size = new System.Drawing.Size(144, 115);
-            this.productsButton.TabIndex = 2;
-            this.productsButton.Text = "คลังสินค้า";
-            this.productsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.productsButton.UseVisualStyleBackColor = true;
-            this.productsButton.Click += new System.EventHandler(this.productsButton_Click);
-            // 
-            // buttonEmployee
-            // 
-            this.buttonEmployee.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonEmployee.FlatAppearance.BorderSize = 0;
-            this.buttonEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonEmployee.Font = new System.Drawing.Font("Kanit", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEmployee.ForeColor = System.Drawing.Color.White;
-            this.buttonEmployee.IconChar = FontAwesome.Sharp.IconChar.UserFriends;
-            this.buttonEmployee.IconColor = System.Drawing.Color.White;
-            this.buttonEmployee.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.buttonEmployee.Location = new System.Drawing.Point(0, 115);
-            this.buttonEmployee.Name = "buttonEmployee";
-            this.buttonEmployee.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.buttonEmployee.Size = new System.Drawing.Size(144, 115);
-            this.buttonEmployee.TabIndex = 3;
-            this.buttonEmployee.Text = "ข้อมูลพนักงาน";
-            this.buttonEmployee.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.buttonEmployee.UseVisualStyleBackColor = true;
-            this.buttonEmployee.Click += new System.EventHandler(this.buttonEmployee_Click);
+            this.menuPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(211)))));
+            this.menuPanel.Controls.Add(this.buttonCustomer);
+            this.menuPanel.Controls.Add(this.buttonEmployee);
+            this.menuPanel.Controls.Add(this.productsButton);
+            this.menuPanel.Controls.Add(this.logoutButton);
+            this.menuPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.menuPanel.Location = new System.Drawing.Point(0, 0);
+            this.menuPanel.Name = "menuPanel";
+            this.menuPanel.Size = new System.Drawing.Size(144, 658);
+            this.menuPanel.TabIndex = 0;
             // 
             // buttonCustomer
             // 
@@ -254,18 +206,66 @@
             this.buttonCustomer.UseVisualStyleBackColor = true;
             this.buttonCustomer.Click += new System.EventHandler(this.buttonCustomer_Click);
             // 
-            // menuPanel
+            // buttonEmployee
             // 
-            this.menuPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(211)))));
-            this.menuPanel.Controls.Add(this.buttonCustomer);
-            this.menuPanel.Controls.Add(this.buttonEmployee);
-            this.menuPanel.Controls.Add(this.productsButton);
-            this.menuPanel.Controls.Add(this.logoutButton);
-            this.menuPanel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.menuPanel.Location = new System.Drawing.Point(0, 0);
-            this.menuPanel.Name = "menuPanel";
-            this.menuPanel.Size = new System.Drawing.Size(144, 658);
-            this.menuPanel.TabIndex = 0;
+            this.buttonEmployee.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonEmployee.FlatAppearance.BorderSize = 0;
+            this.buttonEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEmployee.Font = new System.Drawing.Font("Kanit", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonEmployee.ForeColor = System.Drawing.Color.White;
+            this.buttonEmployee.IconChar = FontAwesome.Sharp.IconChar.UserFriends;
+            this.buttonEmployee.IconColor = System.Drawing.Color.White;
+            this.buttonEmployee.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.buttonEmployee.Location = new System.Drawing.Point(0, 115);
+            this.buttonEmployee.Name = "buttonEmployee";
+            this.buttonEmployee.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.buttonEmployee.Size = new System.Drawing.Size(144, 115);
+            this.buttonEmployee.TabIndex = 3;
+            this.buttonEmployee.Text = "ข้อมูลพนักงาน";
+            this.buttonEmployee.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.buttonEmployee.UseVisualStyleBackColor = true;
+            this.buttonEmployee.Click += new System.EventHandler(this.buttonEmployee_Click);
+            // 
+            // productsButton
+            // 
+            this.productsButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.productsButton.FlatAppearance.BorderSize = 0;
+            this.productsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.productsButton.Font = new System.Drawing.Font("Kanit", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.productsButton.ForeColor = System.Drawing.Color.White;
+            this.productsButton.IconChar = FontAwesome.Sharp.IconChar.Tags;
+            this.productsButton.IconColor = System.Drawing.Color.White;
+            this.productsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.productsButton.Location = new System.Drawing.Point(0, 0);
+            this.productsButton.Name = "productsButton";
+            this.productsButton.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.productsButton.Size = new System.Drawing.Size(144, 115);
+            this.productsButton.TabIndex = 2;
+            this.productsButton.Text = "คลังสินค้า";
+            this.productsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.productsButton.UseVisualStyleBackColor = true;
+            this.productsButton.Click += new System.EventHandler(this.productsButton_Click);
+            // 
+            // logoutButton
+            // 
+            this.logoutButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.logoutButton.FlatAppearance.BorderSize = 0;
+            this.logoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logoutButton.Font = new System.Drawing.Font("Kanit", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logoutButton.ForeColor = System.Drawing.Color.White;
+            this.logoutButton.IconChar = FontAwesome.Sharp.IconChar.SignOut;
+            this.logoutButton.IconColor = System.Drawing.Color.White;
+            this.logoutButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.logoutButton.IconSize = 40;
+            this.logoutButton.Location = new System.Drawing.Point(0, 543);
+            this.logoutButton.Name = "logoutButton";
+            this.logoutButton.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.logoutButton.Size = new System.Drawing.Size(144, 115);
+            this.logoutButton.TabIndex = 1;
+            this.logoutButton.Text = "ออกจากระบบ";
+            this.logoutButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.logoutButton.UseVisualStyleBackColor = true;
+            this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
             // 
             // OwnerForm
             // 

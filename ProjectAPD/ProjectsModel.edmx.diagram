@@ -7,7 +7,7 @@
       <Diagram DiagramId="cf19ceb2032c4afcbdaeca9e1fd8e9d0" Name="Diagram1">
         <EntityTypeShape EntityType="ProjectModel.Billx" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
         <EntityTypeShape EntityType="ProjectModel.Customerx" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjectModel.Employeex" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectModel.Employeex" Width="1.5" PointX="5.875" PointY="4.875" IsExpanded="true" />
         <EntityTypeShape EntityType="ProjectModel.Itemx" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="ProjectModel.Productx" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="ProjectModel.TypeProductx" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
@@ -15,6 +15,10 @@
         <AssociationConnector Association="ProjectModel.FK_Itemx_Billx" ManuallyRouted="false" />
         <AssociationConnector Association="ProjectModel.FK_Itemx_Productx" ManuallyRouted="false" />
         <AssociationConnector Association="ProjectModel.FK_Productx_TypeProductx" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ProjectModel.ComboSet" Width="1.5" PointX="7.75" PointY="4.875" />
+        <EntityTypeShape EntityType="ProjectModel.ComboSetItem" Width="1.5" PointX="7.875" PointY="1.5" />
+        <AssociationConnector Association="ProjectModel.FK_ComboSetItem_ComboSet" />
+        <AssociationConnector Association="ProjectModel.FK_ComboSetItem_Productx" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

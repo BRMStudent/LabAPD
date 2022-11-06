@@ -23,6 +23,7 @@ namespace ProjectAPD.Forms {
             mEmp = new ManageEmpForm("Add Employee", employeexBindingSource);
             mEmp.ShowDialog();
         }
+
         private void buttonEdit_Click(object sender, EventArgs e) {
             try { 
                 int id = int.Parse(guna2DataGridView1.SelectedRows[0].Cells[0].Value.ToString());

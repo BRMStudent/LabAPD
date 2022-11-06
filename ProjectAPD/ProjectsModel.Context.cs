@@ -31,5 +31,7 @@ namespace ProjectAPD
         public virtual DbSet<Itemx> Itemxes { get; set; }
         public virtual DbSet<Productx> Productxes { get; set; }
         public virtual DbSet<TypeProductx> TypeProductxes { get; set; }
+        public virtual DbSet<ComboSet> ComboSets { get; set; }
+        public virtual DbSet<ComboSetItem> ComboSetItems { get; set; }
     }
 }

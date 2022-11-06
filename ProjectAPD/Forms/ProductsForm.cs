@@ -38,6 +38,7 @@ namespace ProjectAPD.Forms {
             ComboboxAddItem(typeIds, typeNames);
             comboBoxType.SelectedIndex = 0;
         }
+
         private void ComboboxAddItem(List<string> typeIds, List<string> typeNames) {
             List<ComboboxItem> items = new List<ComboboxItem>();
 
@@ -63,7 +64,6 @@ namespace ProjectAPD.Forms {
             } else {
                 productxBindingSource.DataSource = context.Productxes.ToList();
             }
-
 
             try {
                 dataGridViewProduct.SelectedRows[0].Selected = true;
